@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Reveal } from './ui/Reveal';
 import { Marquee } from './ui/Marquee';
-import { Check, Sparkles } from 'lucide-react';
 
 const seoServices = [
   {
@@ -142,8 +141,8 @@ export const SEOService: React.FC = () => {
                   className="group relative px-8 py-5 md:px-10 md:py-6 bg-white text-brand-black rounded-full font-chunky font-bold text-lg md:text-xl overflow-hidden hover:scale-105 transition-transform duration-300 w-full md:w-auto shadow-[0_0_40px_rgba(255,255,255,0.2)] text-center"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-brand-purple to-brand-orange translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-3 group-hover:text-white transition-colors">
-                    Get a Free SEO Consultation <Sparkles size={20} className="md:w-6 md:h-6" fill="currentColor" />
+                  <span className="relative z-10 flex items-center justify-center gap-3 group-hover:text-white transition-colors tracking-wide">
+                    Get a Free SEO Consultation
                   </span>
                 </a>
                 <a
@@ -270,40 +269,38 @@ export const SEOService: React.FC = () => {
           </div>
 
           {/* Cinematic Service List */}
-          <div className="flex flex-col gap-16">
+          <div className="flex overflow-x-auto md:flex-col gap-6 md:gap-16 pb-8 snap-x snap-mandatory hide-scrollbar">
             {seoServices.map((service, index) => (
               <div
                 key={index}
-                className="group border-b border-white/10 py-20 md:py-32 transition-all duration-300 hover:border-brand-teal/50"
+                className="min-w-[85vw] md:min-w-0 snap-center shrink-0 group border border-white/10 md:border-x-0 md:border-t-0 md:border-b py-10 md:py-32 cursor-pointer transition-all duration-300 hover:border-brand-teal/50 rounded-3xl md:rounded-none bg-zinc-900/50 md:bg-transparent px-6 md:px-0"
               >
                 <Reveal width="100%" delay={0} variant="up">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-12 md:gap-24 opacity-100 md:opacity-50 md:group-hover:opacity-100 md:group-hover:translate-x-4 transition-all duration-500">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-24 opacity-100 md:opacity-50 md:group-hover:opacity-100 md:group-hover:translate-x-4 transition-all duration-500">
 
                     {/* Number & Title */}
-                    <div className="flex items-start gap-8 md:gap-16 md:w-[45%] md:min-h-[200px]">
+                    <div className="flex items-start gap-6 md:gap-16 md:w-[45%] md:min-h-[200px]">
                       <span className="font-mono text-brand-teal text-xl md:text-2xl shrink-0 leading-none pt-2">0{index + 1}</span>
-                      <h3 className="text-3xl sm:text-4xl md:text-6xl font-chunky font-black text-zinc-500 group-hover:text-white transition-colors duration-300 leading-[1.2]">
+                      <h3 className="text-2xl sm:text-4xl md:text-6xl font-chunky font-black text-zinc-300 md:text-zinc-500 group-hover:text-white transition-colors duration-300 leading-[1.2]">
                         {service.title}
                       </h3>
                     </div>
 
                     {/* Description & Details */}
                     <div className="md:w-[50%] md:min-h-[200px] flex flex-col justify-start gap-6">
-                      <p className="text-lg md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
+                      <p className="text-base md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
 
                       <ul className="space-y-3">
                         {service.bullets.map((bullet, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <div className="w-5 h-5 rounded-full bg-brand-teal/10 flex items-center justify-center shrink-0 mt-0.5">
-                              <Check size={12} className="text-brand-teal" />
-                            </div>
+                          <li key={i} className="flex items-start gap-4">
+                            <span className="text-brand-teal text-xl font-bold leading-none mt-1">•</span>
                             <span className="text-sm md:text-base text-zinc-400">{bullet}</span>
                           </li>
                         ))}
                       </ul>
 
-                      <div className="inline-block bg-zinc-900 border border-zinc-800 px-5 py-3 rounded-xl w-fit">
-                        <p className="text-sm font-mono uppercase tracking-wide">
+                      <div className="inline-block bg-zinc-900 md:bg-zinc-900 border border-zinc-800 px-5 py-3 rounded-xl w-fit">
+                        <p className="text-xs md:text-sm font-mono uppercase tracking-wide">
                           <span className="text-zinc-500">Outcome: </span>
                           <span className="text-brand-orange">{service.outcome}</span>
                         </p>

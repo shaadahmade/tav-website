@@ -103,11 +103,11 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Cinematic List */}
-        <div className="flex flex-col gap-16">
+        <div className="flex overflow-x-auto md:flex-col gap-6 md:gap-16 pb-8 snap-x snap-mandatory hide-scrollbar">
             {services.map((service, index) => (
                 <div
                     key={index}
-                    className="group border-b border-white/10 py-20 md:py-32 cursor-pointer transition-all duration-300 hover:border-brand-teal/50"
+                    className="min-w-[85vw] md:min-w-0 snap-center shrink-0 group border border-white/10 md:border-x-0 md:border-t-0 md:border-b py-10 md:py-32 cursor-pointer transition-all duration-300 hover:border-brand-teal/50 rounded-3xl md:rounded-none bg-zinc-900/50 md:bg-transparent px-6 md:px-0"
                     onMouseEnter={() => {
                         setActiveImage(service.image);
                         setActiveIndex(index);
@@ -118,20 +118,20 @@ export const Services: React.FC = () => {
                     }}
                 >
                     <Reveal width="100%" delay={0} variant="up">
-                        <div className="flex flex-col md:flex-row md:items-start justify-between gap-12 md:gap-24 opacity-100 md:opacity-50 md:group-hover:opacity-100 md:group-hover:translate-x-4 transition-all duration-500">
+                        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-24 opacity-100 md:opacity-50 md:group-hover:opacity-100 md:group-hover:translate-x-4 transition-all duration-500">
 
                             {/* Number & Title */}
-                            <div className="flex items-start gap-8 md:gap-16 md:w-[45%] md:min-h-[200px]">
-                                <span className="font-mono text-brand-teal text-xl md:text-2xl shrink-0 leading-none pt-2">0{index + 1}</span>
-                                <h3 className={`text-3xl sm:text-4xl md:text-6xl font-chunky font-black transition-colors duration-300 leading-[1.2] ${activeIndex === index ? 'text-white' : 'text-zinc-400 md:text-zinc-500 md:group-hover:text-white'}`}>
+                            <div className="flex items-start gap-6 md:gap-16 md:w-[45%] md:min-h-[200px]">
+                                <span className="font-mono text-brand-teal text-xl md:text-2xl shrink-0 leading-none pt-2 md:pt-2">0{index + 1}</span>
+                                <h3 className={`text-2xl sm:text-4xl md:text-6xl font-chunky font-black transition-colors duration-300 leading-[1.2] ${activeIndex === index ? 'text-white' : 'text-zinc-300 md:text-zinc-500 md:group-hover:text-white'}`}>
                                     {service.title}
                                 </h3>
                             </div>
 
                             {/* Description */}
-                            <div className="md:w-[50%] md:min-h-[200px] flex flex-col justify-start gap-6">
-                                <p className="text-lg md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
-                                <p className="text-sm md:text-base text-brand-teal uppercase tracking-[0.2em] font-mono leading-relaxed">{service.details}</p>
+                            <div className="md:w-[50%] md:min-h-[200px] flex flex-col justify-start gap-4 md:gap-6">
+                                <p className="text-base md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
+                                <p className="text-xs md:text-base text-brand-teal uppercase tracking-[0.2em] font-mono leading-relaxed">{service.details}</p>
                             </div>
                         </div>
                     </Reveal>

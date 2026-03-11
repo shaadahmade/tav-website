@@ -42,10 +42,12 @@ export const Industries: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="flex overflow-x-auto md:grid md:grid-cols-2 gap-4 md:gap-8 pb-8 snap-x snap-mandatory hide-scrollbar">
              {industries.map((item, i) => (
                  <Reveal key={i} delay={0.1} width="100%" variant="up">
-                     <IndustryCard item={item} />
+                     <div className="min-w-[85vw] md:min-w-0 snap-center shrink-0">
+                         <IndustryCard item={item} />
+                     </div>
                  </Reveal>
              ))}
           </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Reveal } from './ui/Reveal';
 import { Marquee } from './ui/Marquee';
-import { X, Check } from 'lucide-react';
 
 export const Philosophy: React.FC = () => {
   return (
@@ -60,34 +59,45 @@ export const Philosophy: React.FC = () => {
                   </div>
                </Reveal>
 
-               {/* The "Anti-List" Card - Centered */}
-               <Reveal width="100%" variant="up" delay={0.2}>
-                  <div className="bg-slate-50 rounded-[2.5rem] border border-slate-200 p-10 md:p-16 max-w-4xl mx-auto relative overflow-hidden">
-                     {/* Decorative X */}
-                     <div className="absolute -top-10 -right-10 text-slate-200/50 font-chunky font-black text-[15rem] leading-none select-none pointer-events-none">×</div>
-                     
-                     <div className="relative z-10 text-center mb-10">
-                        <h4 className="text-3xl md:text-4xl font-chunky font-black text-brand-black mb-2">What You Won't Get</h4>
-                        <p className="text-slate-500 font-medium">We don't do "generic".</p>
-                     </div>
-
-                     <div className="grid md:grid-cols-2 gap-6 relative z-10">
-                        {[
-                           "Pre-written website templates",
-                           "Copy-paste ad frameworks",
-                           "Recycled marketing playbooks",
-                           "Jargon that sounds smart but means nothing"
-                        ].map((item, i) => (
-                           <div key={i} className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-                              <div className="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center shrink-0">
-                                 <X size={16} strokeWidth={3} />
-                              </div>
-                              <span className="text-slate-600 font-bold font-chunky text-sm md:text-base line-through decoration-brand-red/30 decoration-2">{item}</span>
-                           </div>
-                        ))}
-                     </div>
-                  </div>
-               </Reveal>
+               {/* "What You Won't Get" Stacking Cards */}
+               <div className="max-w-4xl mx-auto relative w-full pt-20 pb-40">
+                 <Reveal width="100%" variant="up">
+                   <div className="text-center mb-16 md:mb-24">
+                      <h4 className="text-4xl md:text-6xl font-chunky font-black text-brand-black mb-4">What You <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-orange">Won't</span> Get</h4>
+                      <p className="text-slate-500 font-medium text-lg md:text-2xl">We don't do "generic".</p>
+                   </div>
+                 </Reveal>
+                 
+                 <div className="flex flex-col gap-16 md:gap-40 relative z-10 w-full px-2 md:px-0">
+                    {[
+                       { title: "Pre-written website templates", desc: "No cookie-cutter designs that look like everyone else's." },
+                       { title: "Copy-paste ad frameworks", desc: "We build custom strategies, not lazy marketing formulas." },
+                       { title: "Recycled marketing playbooks", desc: "What worked for someone else won't necessarily work for you." },
+                       { title: "Jargon that sounds smart but means nothing", desc: "We speak plainly because true expertise doesn't hide behind big words." }
+                    ].map((item, i) => (
+                       <div 
+                         key={i} 
+                         className="sticky flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 bg-slate-50 p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-slate-200 shadow-[0_-15px_40px_rgba(0,0,0,0.08)] w-full mx-auto will-change-transform" 
+                         style={{ 
+                            top: `calc(15vh + ${i * 24}px)`, 
+                            zIndex: i + 1,
+                            width: `calc(100% - ${(3 - i) * 16}px)`
+                         }}
+                       >
+                          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-red/5 border border-brand-red/10 text-brand-red flex items-center justify-center shrink-0 font-chunky font-black text-4xl md:text-5xl">
+                             ×
+                          </div>
+                          <div>
+                            <h5 className="text-brand-black font-bold font-chunky text-2xl md:text-4xl leading-tight block mb-3 md:mb-4 relative w-fit">
+                               {item.title}
+                               <span className="absolute left-0 right-[-10px] top-[55%] -translate-y-1/2 h-1 md:h-1.5 bg-brand-red/40 block pointer-events-none rounded-full rotate-[-1deg]"></span>
+                            </h5>
+                            <p className="text-slate-500 text-lg md:text-xl font-medium leading-relaxed">{item.desc}</p>
+                          </div>
+                       </div>
+                    ))}
+                 </div>
+               </div>
 
             </div>
           </div>
@@ -117,59 +127,61 @@ export const Philosophy: React.FC = () => {
           </div>
 
           {/* Vertical Timeline Process */}
-          <div className="max-w-5xl mx-auto relative">
+          <div className="max-w-5xl mx-auto relative mt-12 md:mt-0">
              {/* Line */}
              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-zinc-800 md:-translate-x-1/2 hidden md:block"></div>
 
-             {[
-                { 
-                  step: "01", 
-                  title: "Deep Dive", 
-                  desc: "We learn your business better than you do.", 
-                  details: "Competitor Analysis • Audience Profiling • Offer Refining" 
-                },
-                { 
-                  step: "02", 
-                  title: "Strategy Map", 
-                  desc: "We build the roadmap before we drive.", 
-                  details: "Channel Selection • Budget Allocation • KPI Definition" 
-                },
-                { 
-                  step: "03", 
-                  title: "Execution", 
-                  desc: "We build systems, not just ads.", 
-                  details: "High-Fidelity Design • Copywriting • Technical Setup" 
-                },
-                { 
-                  step: "04", 
-                  title: "Optimization", 
-                  desc: "We double down on what works.", 
-                  details: "A/B Testing • Data Analysis • Scaling Winning Ads" 
-                }
-             ].map((item, idx) => (
-                <div key={idx} className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 mb-16 md:mb-24 relative ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                   
-                   {/* Timeline Dot */}
-                   <div className="absolute left-4 md:left-1/2 top-0 w-8 h-8 rounded-full bg-black border-4 border-brand-orange z-10 md:-translate-x-1/2 hidden md:block shadow-[0_0_20px_rgba(241,90,36,0.5)]"></div>
+             <div className="flex overflow-x-auto md:flex-col gap-6 md:gap-0 pb-8 snap-x snap-mandatory hide-scrollbar">
+               {[
+                  { 
+                    step: "01", 
+                    title: "Deep Dive", 
+                    desc: "We learn your business better than you do.", 
+                    details: "Competitor Analysis • Audience Profiling • Offer Refining" 
+                  },
+                  { 
+                    step: "02", 
+                    title: "Strategy Map", 
+                    desc: "We build the roadmap before we drive.", 
+                    details: "Channel Selection • Budget Allocation • KPI Definition" 
+                  },
+                  { 
+                    step: "03", 
+                    title: "Execution", 
+                    desc: "We build systems, not just ads.", 
+                    details: "High-Fidelity Design • Copywriting • Technical Setup" 
+                  },
+                  { 
+                    step: "04", 
+                    title: "Optimization", 
+                    desc: "We double down on what works.", 
+                    details: "A/B Testing • Data Analysis • Scaling Winning Ads" 
+                  }
+               ].map((item, idx) => (
+                  <div key={idx} className={`min-w-[85vw] md:min-w-0 snap-center shrink-0 flex flex-col md:flex-row items-center gap-8 md:gap-0 md:mb-24 relative ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                     
+                     {/* Timeline Dot */}
+                     <div className="absolute left-4 md:left-1/2 top-0 w-8 h-8 rounded-full bg-black border-4 border-brand-orange z-10 md:-translate-x-1/2 hidden md:block shadow-[0_0_20px_rgba(241,90,36,0.5)]"></div>
 
-                   {/* Content Side */}
-                   <div className="w-full md:w-1/2 md:px-16 text-left md:text-center group">
-                      <Reveal width="100%" variant={idx % 2 === 0 ? 'right' : 'left'}>
-                         <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-10 rounded-[2rem] hover:border-brand-orange/50 transition-colors duration-300">
-                            <span className="text-6xl font-chunky font-black text-zinc-800 group-hover:text-zinc-700 transition-colors block mb-4">{item.step}</span>
-                            <h4 className="text-3xl font-chunky font-bold text-white mb-2">{item.title}</h4>
-                            <p className="text-xl text-zinc-300 font-bold mb-4">{item.desc}</p>
-                            <div className="inline-block bg-zinc-800 px-4 py-2 rounded-lg">
-                               <p className="text-sm font-mono text-brand-orange uppercase tracking-wide">{item.details}</p>
-                            </div>
-                         </div>
-                      </Reveal>
-                   </div>
-                   
-                   {/* Empty Side for layout balance */}
-                   <div className="w-full md:w-1/2 hidden md:block"></div>
-                </div>
-             ))}
+                     {/* Content Side */}
+                     <div className="w-full md:w-1/2 md:px-16 text-left md:text-center group">
+                        <Reveal width="100%" variant={idx % 2 === 0 ? 'right' : 'left'}>
+                           <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-10 rounded-[2rem] hover:border-brand-orange/50 transition-colors duration-300">
+                              <span className="text-6xl font-chunky font-black text-zinc-800 group-hover:text-zinc-700 transition-colors block mb-4">{item.step}</span>
+                              <h4 className="text-2xl md:text-3xl font-chunky font-bold text-white mb-2">{item.title}</h4>
+                              <p className="text-lg md:text-xl text-zinc-300 font-bold mb-4">{item.desc}</p>
+                              <div className="inline-block bg-zinc-800 px-4 py-2 rounded-lg">
+                                 <p className="text-xs md:text-sm font-mono text-brand-orange uppercase tracking-wide">{item.details}</p>
+                              </div>
+                           </div>
+                        </Reveal>
+                     </div>
+                     
+                     {/* Empty Side for layout balance */}
+                     <div className="w-full md:w-1/2 hidden md:block"></div>
+                  </div>
+               ))}
+             </div>
           </div>
 
         </div>
@@ -188,15 +200,15 @@ export const Philosophy: React.FC = () => {
                 Quality and Ethics Over <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">Shortcuts.</span>
             </h3>
             
-            <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 max-w-7xl mx-auto mb-24 md:mb-32">
+            <div className="flex overflow-x-auto md:flex-row justify-start md:justify-center gap-6 md:gap-10 max-w-7xl mx-auto mb-24 md:mb-32 pb-8 snap-x snap-mandatory hide-scrollbar">
                 {[
                     { t: "No Misleading Ads", d: "We value reputation." },
                     { t: "No Black-hat SEO", d: "We play long term." },
                     { t: "No Inflated Metrics", d: "Real numbers only." }
                 ].map((item, idx) => (
-                    <div key={idx} className="flex-1 bg-white/5 border border-white/10 p-10 rounded-[3rem] hover:bg-white/10 transition-colors backdrop-blur-sm group">
-                        <div className="w-16 h-16 rounded-full bg-brand-teal/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                            <Check size={32} className="text-brand-teal" />
+                    <div key={idx} className="min-w-[75vw] md:min-w-0 snap-center shrink-0 flex-1 bg-white/5 border border-white/10 p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] hover:bg-white/10 transition-colors backdrop-blur-sm group text-left md:text-center">
+                        <div className="w-16 h-16 rounded-full bg-brand-teal/10 text-brand-teal flex items-center justify-center mb-6 md:mx-auto group-hover:scale-110 transition-transform font-chunky font-bold text-3xl">
+                            ✓
                         </div>
                         <h4 className="text-2xl md:text-3xl font-bold font-chunky mb-2">{item.t}</h4>
                         <p className="text-slate-400 font-chunky text-lg">{item.d}</p>

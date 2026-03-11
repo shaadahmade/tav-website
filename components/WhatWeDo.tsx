@@ -53,22 +53,22 @@ export const WhatWeDo: React.FC = () => {
               </Reveal>
             </div>
 
-            {/* Right Column: Stacked Cards (One After One) */}
-            <div className="md:w-7/12 flex flex-col gap-10 md:gap-16 w-full">
+            {/* Right Column: Stacked Cards (Horizontal on mobile, one after one on desktop) */}
+            <div className="md:w-7/12 flex overflow-x-auto md:flex-col gap-6 md:gap-16 w-full pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar">
               {cards.map((card, idx) => (
-                <Reveal key={idx} delay={0.1} width="100%" variant="up">
-                  <div className="bg-zinc-900 p-10 md:p-14 rounded-[2.5rem] md:rounded-[3rem] shadow-sm border border-zinc-800 hover:shadow-2xl hover:border-zinc-600 transition-all duration-500 group relative overflow-hidden flex flex-col justify-center min-h-[350px]">
+                <Reveal key={idx} delay={0.1} width="100%" variant="up" className="min-w-[85vw] md:min-w-0 snap-center shrink-0 w-full inline-block">
+                  <div className="bg-zinc-900 p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-sm border border-zinc-800 hover:shadow-2xl hover:border-zinc-600 transition-all duration-500 group relative overflow-hidden flex flex-col justify-center min-h-[300px] md:min-h-[350px]">
                     
                     {/* Large Background Number */}
-                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <span className="text-9xl md:text-[12rem] font-chunky font-black text-white">0{idx + 1}</span>
+                    <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span className="text-8xl md:text-[12rem] font-chunky font-black text-white">0{idx + 1}</span>
                     </div>
                     
-                    <div className={`w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-8 md:mb-10 group-hover:scale-110 transition-transform shadow-2xl relative z-10`}>
-                      <span className="font-chunky font-bold text-3xl md:text-4xl text-white">0{idx + 1}</span>
+                    <div className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-6 md:mb-10 group-hover:scale-110 transition-transform shadow-2xl relative z-10`}>
+                      <span className="font-chunky font-bold text-2xl md:text-4xl text-white">0{idx + 1}</span>
                     </div>
                     
-                    <p className="text-white text-2xl md:text-4xl font-chunky font-bold leading-snug relative z-10 max-w-xl">
+                    <p className="text-white text-xl sm:text-2xl md:text-4xl font-chunky font-bold leading-snug relative z-10 max-w-xl pr-4 md:pr-0">
                         {card.desc}
                     </p>
                   </div>
