@@ -11,6 +11,8 @@ const Services = lazy(() => import('./components/Services').then(module => ({ de
 const Industries = lazy(() => import('./components/Industries').then(module => ({ default: module.Industries })));
 const CTA = lazy(() => import('./components/CTA').then(module => ({ default: module.CTA })));
 const SEOService = lazy(() => import('./components/SEOService').then(module => ({ default: module.SEOService })));
+const WebDesignService = lazy(() => import('./components/WebDesignService').then(module => ({ default: module.WebDesignService })));
+const MarketingAutomationService = lazy(() => import('./components/MarketingAutomationService').then(module => ({ default: module.MarketingAutomationService })));
 
 // Minimal loader for sections
 const SectionLoader = () => (
@@ -52,6 +54,16 @@ function App() {
           <Route path="/services/seo" element={
             <Suspense fallback={<SectionLoader />}>
               <SEOService />
+            </Suspense>
+          } />
+          <Route path="/services/web-design" element={
+            <Suspense fallback={<SectionLoader />}>
+              <WebDesignService />
+            </Suspense>
+          } />
+          <Route path="/services/marketing-automation" element={
+            <Suspense fallback={<SectionLoader />}>
+              <MarketingAutomationService />
             </Suspense>
           } />
         </Routes>

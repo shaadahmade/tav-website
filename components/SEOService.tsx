@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Reveal } from './ui/Reveal';
 import { Marquee } from './ui/Marquee';
+import { GlassButton } from './ui/glass-button';
 
 const seoServices = [
   {
@@ -135,21 +136,16 @@ export const SEOService: React.FC = () => {
 
             {/* CTA */}
             <Reveal width="100%" delay={0.4} variant="up">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 px-4">
-                <a
-                  href="#contact"
-                  className="group relative px-8 py-5 md:px-10 md:py-6 bg-white text-brand-black rounded-full font-chunky font-bold text-lg md:text-xl overflow-hidden hover:scale-105 transition-transform duration-300 w-full md:w-auto shadow-[0_0_40px_rgba(255,255,255,0.2)] text-center"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-purple to-brand-orange translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-3 group-hover:text-white transition-colors tracking-wide">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 px-4 group-hover:bg-transparent">
+                <a href="#contact">
+                  <GlassButton size="lg">
                     Get a Free SEO Consultation
-                  </span>
+                  </GlassButton>
                 </a>
-                <a
-                  href="#seo-services"
-                  className="group px-8 py-5 md:px-10 md:py-6 border border-zinc-700 bg-black/40 backdrop-blur-md rounded-full font-chunky font-bold text-lg md:text-xl text-white hover:bg-zinc-900 transition-all duration-300 w-full md:w-auto hover:border-brand-teal flex items-center justify-center gap-3"
-                >
-                  See What We Do
+                <a href="#seo-services">
+                  <GlassButton variant="secondary" size="lg">
+                    See What We Do
+                  </GlassButton>
                 </a>
               </div>
             </Reveal>
@@ -177,9 +173,9 @@ export const SEOService: React.FC = () => {
                 <p className="text-xl md:text-3xl text-slate-500 font-chunky font-medium mb-10 leading-relaxed">
                   Most SEO fails because it chases numbers:
                 </p>
-                <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
+                <div className="flex flex-wrap justify-center gap-10 md:gap-20 mb-12">
                   {["Traffic", "Rankings", "Impressions"].map((item, i) => (
-                    <span key={i} className="px-6 py-3 rounded-full bg-slate-100 border border-slate-200 text-brand-black font-chunky font-bold text-lg md:text-xl">
+                    <span key={i} className="text-slate-300 font-chunky font-bold text-xl md:text-3xl uppercase tracking-widest leading-none">
                       {item}
                     </span>
                   ))}
@@ -214,7 +210,7 @@ export const SEOService: React.FC = () => {
           {/* Header */}
           <div className="max-w-5xl mx-auto text-center mb-24 md:mb-32">
             <Reveal width="100%" variant="up">
-              <span className="inline-block py-2 px-6 rounded-full border border-white/20 text-brand-teal font-mono text-xs md:text-sm font-bold tracking-widest uppercase mb-8">
+              <span className="text-brand-teal font-mono text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-8 block">
                 Our SEO Philosophy
               </span>
               <h3 className="text-4xl sm:text-6xl md:text-8xl font-chunky font-black text-white mb-8 leading-[0.9]">
@@ -234,7 +230,6 @@ export const SEOService: React.FC = () => {
             {principles.map((principle, idx) => (
               <Reveal key={idx} width="100%" variant="up" delay={idx * 0.1}>
                 <div className="flex-1 bg-white/5 border border-white/10 p-10 rounded-[3rem] hover:bg-white/10 transition-colors backdrop-blur-sm group">
-                  <span className="text-6xl font-chunky font-black text-zinc-800 group-hover:text-zinc-700 transition-colors block mb-4">0{idx + 1}</span>
                   <h4 className="text-2xl md:text-3xl font-bold font-chunky mb-4 text-white">{principle.title}</h4>
                   <p className="text-zinc-300 font-chunky text-lg mb-4">{principle.description}</p>
                   <p className="text-zinc-500 text-base leading-relaxed">{principle.detail}</p>
@@ -280,7 +275,6 @@ export const SEOService: React.FC = () => {
 
                     {/* Number & Title */}
                     <div className="flex items-start gap-6 md:gap-16 md:w-[45%] md:min-h-[200px]">
-                      <span className="font-mono text-brand-teal text-xl md:text-2xl shrink-0 leading-none pt-2">0{index + 1}</span>
                       <h3 className="text-2xl sm:text-4xl md:text-6xl font-chunky font-black text-zinc-300 md:text-zinc-500 group-hover:text-white transition-colors duration-300 leading-[1.2]">
                         {service.title}
                       </h3>
@@ -338,8 +332,10 @@ export const SEOService: React.FC = () => {
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 md:gap-6">
-                <a href="#contact" className="inline-block bg-white text-brand-black text-lg md:text-xl font-chunky font-bold py-4 px-10 md:py-5 md:px-12 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-brand-purple hover:to-brand-orange hover:text-white hover:scale-105 transition-all duration-300 w-full md:w-auto text-center">
-                  Book Your Free SEO Consultation Today
+                <a href="#contact">
+                  <GlassButton size="lg">
+                    Book Your Free SEO Consultation Today
+                  </GlassButton>
                 </a>
               </div>
             </div>

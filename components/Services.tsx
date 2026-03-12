@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Reveal } from './ui/Reveal';
 import { Marquee } from './ui/Marquee';
 
@@ -7,7 +8,8 @@ const services = [
     title: "Website Design",
     description: "Your customer shouldn't have to read your website carefully to know what to do next.",
     details: "What you do • Who it's for • How to take the next step",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop",
+    link: "/services/web-design"
   },
   {
     title: "Website Dev",
@@ -25,13 +27,15 @@ const services = [
     title: "SEO",
     description: "We don't chase traffic. We bring high-intent customers already searching for your business.",
     details: "Search intent • Answer questions • Compound visibility",
-    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2070&auto=format&fit=crop",
+    link: "/services/seo"
   },
   {
     title: "Marketing Automation",
     description: "Good marketing automation doesn't replace human interaction. It makes sure customers hear from you at the right time.",
     details: "Follow up instantly • Send relevant messages • Guide leads",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    link: "/services/marketing-automation"
   },
   {
     title: "Performance Marketing",
@@ -62,6 +66,7 @@ const services = [
 export const Services: React.FC = () => {
   const [activeImage, setActiveImage] = useState(services[0].image);
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   // Preload images to prevent flickering
   useEffect(() => {
@@ -91,7 +96,7 @@ export const Services: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 pb-32 md:pb-64 relative z-20">
         <div className="text-center max-w-4xl mx-auto mb-24 md:mb-40">
           <Reveal width="100%" variant="up">
-            <h2 className="text-4xl sm:text-7xl md:text-9xl font-chunky font-black text-white mb-8 tracking-tighter leading-[0.9]">
+           <h2 className="text-3xl sm:text-5xl md:text-8xl font-chunky font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1.1] md:leading-[0.9]">
               We don't offer <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-orange">generic services.</span>
             </h2>
           </Reveal>
@@ -103,11 +108,11 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Cinematic List */}
-        <div className="flex overflow-x-auto md:flex-col gap-6 md:gap-16 pb-8 snap-x snap-mandatory hide-scrollbar">
+        <div className="flex flex-col gap-8 md:gap-16 pb-8">
             {services.map((service, index) => (
                 <div
                     key={index}
-                    className="min-w-[85vw] md:min-w-0 snap-center shrink-0 group border border-white/10 md:border-x-0 md:border-t-0 md:border-b py-10 md:py-32 cursor-pointer transition-all duration-300 hover:border-brand-teal/50 rounded-3xl md:rounded-none bg-zinc-900/50 md:bg-transparent px-6 md:px-0"
+                    className="group border-b border-white/10 py-8 md:py-16 cursor-pointer transition-all duration-300 hover:border-brand-teal/50"
                     onMouseEnter={() => {
                         setActiveImage(service.image);
                         setActiveIndex(index);
@@ -115,6 +120,10 @@ export const Services: React.FC = () => {
                     onClick={() => {
                         setActiveImage(service.image);
                         setActiveIndex(index);
+                        if (service.link) {
+                            window.scrollTo(0, 0);
+                            navigate(service.link);
+                        }
                     }}
                 >
                     <Reveal width="100%" delay={0} variant="up">
@@ -122,7 +131,6 @@ export const Services: React.FC = () => {
 
                             {/* Number & Title */}
                             <div className="flex items-start gap-6 md:gap-16 md:w-[45%] md:min-h-[200px]">
-                                <span className="font-mono text-brand-teal text-xl md:text-2xl shrink-0 leading-none pt-2 md:pt-2">0{index + 1}</span>
                                 <h3 className={`text-2xl sm:text-4xl md:text-6xl font-chunky font-black transition-colors duration-300 leading-[1.2] ${activeIndex === index ? 'text-white' : 'text-zinc-300 md:text-zinc-500 md:group-hover:text-white'}`}>
                                     {service.title}
                                 </h3>

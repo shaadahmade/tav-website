@@ -25,7 +25,7 @@ export const Technical: React.FC = () => {
        <div className="container mx-auto px-6 relative z-10">
         <Reveal width="100%" variant="down">
           <div className="flex flex-col items-center mb-20">
-             <span className="font-mono text-brand-purple font-bold tracking-widest uppercase mb-4 bg-brand-purple/10 px-4 py-2 rounded-full">Our Arsenal</span>
+             <span className="font-mono text-brand-purple font-bold tracking-widest uppercase mb-4 block">Our Arsenal</span>
              <h2 className="text-5xl md:text-7xl font-chunky font-black text-center text-brand-black dark:text-white leading-tight">
                 Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-purple">Powerhouse</span>
              </h2>

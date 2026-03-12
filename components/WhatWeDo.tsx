@@ -26,17 +26,17 @@ export const WhatWeDo: React.FC = () => {
       <div className="py-32 md:py-48 overflow-hidden relative">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row gap-20 items-start">
-            
+
             {/* Left Column: Headline */}
             <div className="md:w-5/12 relative md:sticky md:top-32">
               <Reveal variant="up">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-chunky font-bold mb-8 leading-tight text-white">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-chunky font-bold mb-6 md:mb-8 leading-tight text-white">
                   What We Do.
                 </h2>
               </Reveal>
-              
+
               <Reveal delay={0.2} variant="up">
-                <p className="text-xl md:text-2xl text-zinc-400 mb-12 font-chunky leading-relaxed max-w-md">
+                <p className="text-base md:text-xl text-zinc-400 mb-10 font-sans leading-relaxed max-w-md">
                   We’re a digital marketing agency focused on clarity that makes your brand understandable in under 5 seconds.
                 </p>
               </Reveal>
@@ -45,34 +45,43 @@ export const WhatWeDo: React.FC = () => {
                 <div className="p-8 border-l-4 border-brand-teal bg-zinc-900/50 rounded-r-3xl">
                   <p className="text-2xl text-white font-chunky mb-4 font-bold">That means:</p>
                   <div className="text-brand-teal font-chunky font-bold tracking-wide text-2xl md:text-3xl leading-tight">
-                    Same message.<br/>
-                    Same promise.<br/>
+                    Same message.<br />
+                    Same promise.<br />
                     Across every touchpoint.
                   </div>
                 </div>
               </Reveal>
             </div>
 
-            {/* Right Column: Stacked Cards (Horizontal on mobile, one after one on desktop) */}
-            <div className="md:w-7/12 flex overflow-x-auto md:flex-col gap-6 md:gap-16 w-full pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar">
+            {/* Right Column: Stacked Cards */}
+            <div className="md:w-7/12 relative flex flex-col gap-6 md:gap-0 w-full pb-8 md:pb-0">
               {cards.map((card, idx) => (
-                <Reveal key={idx} delay={0.1} width="100%" variant="up" className="min-w-[85vw] md:min-w-0 snap-center shrink-0 w-full inline-block">
-                  <div className="bg-zinc-900 p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-sm border border-zinc-800 hover:shadow-2xl hover:border-zinc-600 transition-all duration-500 group relative overflow-hidden flex flex-col justify-center min-h-[300px] md:min-h-[350px]">
-                    
-                    {/* Large Background Number */}
-                    <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                        <span className="text-8xl md:text-[12rem] font-chunky font-black text-white">0{idx + 1}</span>
-                    </div>
-                    
-                    <div className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-6 md:mb-10 group-hover:scale-110 transition-transform shadow-2xl relative z-10`}>
-                      <span className="font-chunky font-bold text-2xl md:text-4xl text-white">0{idx + 1}</span>
-                    </div>
-                    
-                    <p className="text-white text-xl sm:text-2xl md:text-4xl font-chunky font-bold leading-snug relative z-10 max-w-xl pr-4 md:pr-0">
+                <div
+                  key={idx}
+                  className="sticky top-24 md:top-32 w-full mb-8 md:mb-20 last:mb-0 group"
+                  style={{
+                    zIndex: idx + 1,
+                    transform: `perspective(2000px) translateY(${idx * 10}px)`
+                  }}
+                >
+                  <Reveal delay={0.1} width="100%" variant="up">
+                    <div className="bg-zinc-900/80 backdrop-blur-2xl p-6 md:p-16 rounded-[2rem] md:rounded-[4rem] border border-white/5 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.4)] transition-all duration-700 hover:border-white/20 hover:bg-zinc-900 overflow-hidden flex flex-col justify-center min-h-[220px] md:min-h-[400px]">
+
+
+
+
+                      <div className={`w-14 h-14 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-8 md:mb-12 group-hover:scale-110 transition-transform shadow-[0_0_50px_rgba(0,0,0,0.5)] relative z-10`}>
+                      </div>
+
+                      <p className="text-white text-xl sm:text-2xl md:text-5xl font-chunky font-bold leading-[1.2] relative z-10 max-w-2xl pr-4 md:pr-0">
                         {card.desc}
-                    </p>
-                  </div>
-                </Reveal>
+                      </p>
+
+                      {/* Grain Overlay */}
+                      <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+                    </div>
+                  </Reveal>
+                </div>
               ))}
             </div>
           </div>

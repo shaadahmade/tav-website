@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Reveal } from './ui/Reveal';
+import { GlassButton } from './ui/glass-button';
 
 export const CTA: React.FC = () => {
   const [offset, setOffset] = useState(0);
@@ -47,19 +48,23 @@ export const CTA: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10 md:pt-20">
         <Reveal width="100%" variant="zoom">
-          <h2 className="text-3xl sm:text-5xl md:text-7xl font-chunky font-black mb-6 md:mb-8 leading-tight text-white">
-            People don't choose the best brand.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-orange">They choose the brand they understand first.</span>
-          </h2>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-chunky font-black mb-6 md:mb-10 leading-[1.2] lg:leading-tight text-white px-2">
+              People don't choose the best brand. <br className="md:hidden" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-orange">They choose the brand they understand first.</span>
+            </h2>
+          </div>
 
           <div className="mb-10 md:mb-12">
-            <p className="text-lg md:text-3xl font-chunky text-zinc-300 mb-6 md:mb-8 font-bold leading-tight px-2">
+            <p className="text-base sm:text-xl md:text-2xl font-sans text-zinc-300 mb-8 md:mb-12 font-medium leading-relaxed px-2">
               Let's make your first impression a lasting impression.
             </p>
 
             <div id="cta-btn" className="flex flex-col items-center justify-center gap-4 md:gap-6">
-                 <a href="#contact" className="inline-block bg-white text-brand-black text-lg md:text-xl font-chunky font-bold py-4 px-10 md:py-5 md:px-12 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-brand-purple hover:to-brand-orange hover:scale-105 transition-all duration-300 w-full md:w-auto text-center">
-                    Book Your Free Digital Marketing Consultation Today
+                 <a href="#contact" className="inline-block">
+                    <GlassButton size="lg">
+                       Book Your Consultation Today
+                    </GlassButton>
                  </a>
             </div>
           </div>

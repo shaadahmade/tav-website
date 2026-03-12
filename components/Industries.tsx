@@ -1,57 +1,142 @@
 import React from 'react';
 import { Reveal } from './ui/Reveal';
+import { CircularGallery, GalleryItem } from './ui/circular-gallery';
 
-const industries = [
-  { n: "Education", img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Manufacturing", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Healthcare", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Food and Beverages", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2070&auto=format&fit=crop" },
-  { n: "E-commerce", img: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Finance", img: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Real Estate", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop" },
-  { n: "Transportation & Logistics", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Travel & Tourism", img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2070&auto=format&fit=crop" },
-  { n: "Startup", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" },
+const industries: GalleryItem[] = [
+  {
+    common: "Education",
+    binomial: "Knowledge for all",
+    photo: {
+      url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop",
+      text: "Learning and development",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Manufacturing",
+    binomial: "The backbone of industry",
+    photo: {
+      url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+      text: "Industrial production",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Healthcare",
+    binomial: "Caring for one another",
+    photo: {
+      url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+      text: "Medical services",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Food and Beverages",
+    binomial: "Sustaining the world",
+    photo: {
+      url: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2070&auto=format&fit=crop",
+      text: "Culinary arts",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "E-commerce",
+    binomial: "Shopping made easy",
+    photo: {
+      url: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2070&auto=format&fit=crop",
+      text: "Digital retail",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Finance",
+    binomial: "Economic stability",
+    photo: {
+      url: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=2070&auto=format&fit=crop",
+      text: "Banking and investment",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Real Estate",
+    binomial: "Building the future",
+    photo: {
+      url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop",
+      text: "Property management",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Logistics",
+    binomial: "Moving the world",
+    photo: {
+      url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
+      text: "Supply chain",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Tourism",
+    binomial: "Exploring the globe",
+    photo: {
+      url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2070&auto=format&fit=crop",
+      text: "Travel services",
+      by: "Unsplash"
+    }
+  },
+  {
+    common: "Startup",
+    binomial: "Innovation and growth",
+    photo: {
+      url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+      text: "New business ventures",
+      by: "Unsplash"
+    }
+  },
 ];
-
-const IndustryCard: React.FC<{ item: { n: string, img: string } }> = ({ item }) => (
-    <div className="w-full h-[350px] md:h-[450px] relative rounded-[2rem] overflow-hidden group cursor-pointer shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
-        <img src={item.img} alt={item.n} className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 grayscale group-hover:grayscale-0" />
-        <div className="absolute bottom-0 left-0 p-6 md:p-10 z-20">
-            <h3 className="text-3xl md:text-5xl font-chunky font-black text-white stroke-text-white group-hover:text-brand-teal transition-colors">
-                {item.n}
-            </h3>
-        </div>
-    </div>
-);
 
 export const Industries: React.FC = () => {
   return (
-    <section className="bg-white overflow-hidden relative flex flex-col py-32 md:py-48 rounded-t-[2.5rem] md:rounded-t-[5rem] -mt-10 md:-mt-32 z-50 shadow-[0_-50px_100px_rgba(0,0,0,0.5)]">
+    <section className="bg-white overflow-hidden relative flex flex-col pt-32 md:pt-48 rounded-t-[2.5rem] md:rounded-t-[5rem] -mt-10 md:-mt-32 z-50 shadow-[0_-50px_100px_rgba(0,0,0,0.5)]">
       
-      <div className="container mx-auto px-4 md:px-6 mb-20 md:mb-32 pt-16">
+      <div className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-16 relative z-10 pointer-events-none">
         <Reveal width="100%" variant="zoom">
           <div className="text-center">
-            <h2 className="text-4xl sm:text-6xl md:text-[10rem] font-chunky font-black text-brand-black mb-8 md:mb-12 leading-none">Industries We Work With</h2>
-            <p className="text-slate-500 max-w-3xl mx-auto font-chunky font-bold text-xl md:text-3xl leading-relaxed px-4">
-                We provide digital marketing services for industries where <span className="text-brand-purple font-black">Clarity and trust matter most.</span>
+            <h2 className="text-4xl sm:text-6xl md:text-8xl font-chunky font-black text-brand-black mb-6 md:mb-12 leading-none uppercase tracking-tighter">Industries</h2>
+            <p className="text-slate-500 max-w-3xl mx-auto font-sans font-medium text-lg md:text-2xl leading-relaxed px-4">
+                We provide digital marketing services for industries where <span className="text-brand-purple font-extrabold">Clarity and trust matter most.</span>
             </p>
           </div>
         </Reveal>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
-          <div className="flex overflow-x-auto md:grid md:grid-cols-2 gap-4 md:gap-8 pb-8 snap-x snap-mandatory hide-scrollbar">
-             {industries.map((item, i) => (
-                 <Reveal key={i} delay={0.1} width="100%" variant="up">
-                     <div className="min-w-[85vw] md:min-w-0 snap-center shrink-0">
-                         <IndustryCard item={item} />
-                     </div>
-                 </Reveal>
-             ))}
-          </div>
+      {/* Desktop 3D Gallery */}
+      <div className="hidden md:block w-full h-[900px] -mt-10 relative">
+        <div className="absolute inset-0 z-0">
+          <CircularGallery items={industries} radius={800} autoRotateSpeed={0.03} />
+        </div>
       </div>
+
+      {/* Mobile Horizontal Carousel Layout */}
+      <div className="md:hidden w-full pb-16 overflow-hidden">
+        <div className="flex overflow-x-auto gap-4 px-4 pb-8 snap-x snap-mandatory hide-scrollbar">
+          {industries.map((item, i) => (
+            <div key={i} className="relative min-w-[85vw] sm:min-w-[60vw] h-[400px] shrink-0 snap-center rounded-3xl shadow-xl overflow-hidden group border border-slate-100">
+               <img 
+                 src={item.photo.url} 
+                 alt={item.photo.text} 
+                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110" 
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+               <div className="absolute bottom-0 left-0 p-6 text-white w-full">
+                   <h3 className="text-3xl font-chunky font-black uppercase tracking-tight mb-2">{item.common}</h3>
+                   <p className="text-xs sm:text-sm font-sans text-brand-teal font-bold uppercase tracking-widest">{item.binomial}</p>
+               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 };
