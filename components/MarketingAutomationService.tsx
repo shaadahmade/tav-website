@@ -243,7 +243,7 @@ export const MarketingAutomationService: React.FC = () => {
 
         {/* Radial Gradient Blobs for depth */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100vw,1000px)] h-[min(100vw,1000px)] bg-brand-purple/20 rounded-full blur-[180px] opacity-40" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100vw,1000px)] h-[min(100vw,1000px)] bg-zinc-700/10 rounded-full blur-[180px] opacity-40" />
           <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         </div>
 
@@ -369,7 +369,7 @@ export const MarketingAutomationService: React.FC = () => {
       </section>
 
       {/* ============ MARQUEE ============ */}
-      <div className="bg-brand-purple/20 border-y border-brand-purple/30 py-6 md:py-8 overflow-hidden">
+      <div className="bg-zinc-900/40 border-y border-zinc-800 py-6 md:py-8 overflow-hidden">
         <Marquee
           text="AGENTIC AI • MULTI-AGENT • LANGCHAIN • LANGGRAPH • MCP PROTOCOL • A2A PROTOCOL • PYTHON • AUTONOMOUS WORKFLOWS •"
           speed={40}
@@ -401,7 +401,7 @@ export const MarketingAutomationService: React.FC = () => {
                   <div className="relative z-20 p-2">
                     <div
                       className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6"
-                      style={{ backgroundColor: `${card.color}20`, border: `1px solid ${card.color}30` }}
+                      style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                     >
                       {card.icon}
                     </div>
@@ -419,7 +419,7 @@ export const MarketingAutomationService: React.FC = () => {
       {/* ============ INTEGRATIONS / TECH STACK ============ */}
       <section className="dark bg-black py-24 md:py-32 relative overflow-hidden border-t border-zinc-900">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-brand-magenta/5 rounded-full blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-zinc-800/10 rounded-full blur-[120px]" />
         </div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <Reveal width="100%" variant="up">
@@ -531,9 +531,9 @@ export const MarketingAutomationService: React.FC = () => {
           />
         </div>
         <div className="absolute inset-0 pointer-events-none z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(80vw,600px)] h-[min(80vw,600px)] bg-brand-purple/15 rounded-full blur-[120px]" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-magenta/10 rounded-full blur-[80px]" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-teal/10 rounded-full blur-[80px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(80vw,600px)] h-[min(80vw,600px)] bg-zinc-700/10 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800/10 rounded-full blur-[80px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-[80px]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">

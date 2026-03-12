@@ -168,8 +168,8 @@ const APPS = [
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M6.6 17.15l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" transform="translate(-1.5 -3.3) scale(0.8)"/>
         <path d="M7 13l-6 10.4h12L7 13z"/>
-        <path d="M7 4L1 14h6l6-10z" fill="#34A853" transform="translate(6 0)"/>
-        <path d="M14 14l6-10-6-0L8 14z" fill="#FBBC05" transform="translate(0 0)"/>
+        <path d="M7 4L1 14h6l6-10z" fill="currentColor" transform="translate(6 0)"/>
+        <path d="M14 14l6-10-6-0L8 14z" fill="currentColor" transform="translate(0 0)"/>
       </svg>
     ),
     glowColor: "rgba(66,133,244,0.2)",
@@ -203,6 +203,7 @@ interface OrbitIconProps {
   duration: number;
   reverse: boolean;
   iconSize: number;
+  key?: string;
 }
 
 function OrbitIcon({ app, radius, totalCount, index, duration, reverse, iconSize }: OrbitIconProps) {
@@ -233,10 +234,10 @@ function OrbitIcon({ app, radius, totalCount, index, duration, reverse, iconSize
         <div
           className="group relative w-full h-full rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-125 flex items-center justify-center"
           style={{
-            background: app.bg,
-            border: `1px solid ${app.border}`,
-            boxShadow: `0 0 20px ${app.glowColor}, 0 4px 20px rgba(0,0,0,0.4)`,
-            color: app.color,
+            background: "rgba(0,0,0,0.8)",
+            border: "1px solid rgba(255,255,255,0.15)",
+            boxShadow: "0 0 20px rgba(255,255,255,0.05), 0 4px 20px rgba(0,0,0,0.4)",
+            color: "#ffffff",
             padding: iconSize * 0.2,
           }}
         >
@@ -307,15 +308,15 @@ export default function MultiOrbitSemiCircle() {
           style={{
             width: size * 0.18,
             height: size * 0.18,
-            background: "radial-gradient(circle, rgba(139,92,246,0.4) 0%, transparent 70%)",
-            filter: "blur(20px)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)",
+            filter: "blur(25px)",
           }}
         />
 
         {/* Center label */}
         <div className="absolute flex flex-col items-center justify-center z-10">
           <span className="text-white/80 font-mono text-[10px] uppercase tracking-[0.3em] mb-1">Powered by</span>
-          <span className="font-chunky font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-purple via-brand-magenta to-brand-teal text-2xl md:text-3xl leading-none">AI</span>
+          <span className="font-chunky font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-400 to-zinc-600 text-2xl md:text-3xl leading-none uppercase">AI</span>
         </div>
 
         {/* Orbiting rings */}
