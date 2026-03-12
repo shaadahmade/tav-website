@@ -100,8 +100,8 @@ export const Hero: React.FC = () => {
             className="mb-8 md:mb-12 relative inline-block group will-change-transform"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange via-brand-purple to-brand-teal rounded-full blur-[30px] md:blur-[40px] opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
-            <div className="relative z-10 bg-white backdrop-blur-3xl border border-white/20 shadow-[0_40px_100px_rgba(255,255,255,0.1)] rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 flex flex-col items-center justify-center mx-auto animate-float transition-all duration-300 px-4 md:px-6 overflow-hidden">
-              <Logo className="w-full h-auto max-w-[90%] relative z-20 drop-shadow-[0_10px_30px_rgba(0,0,0,0.1)]" textClassName="text-4xl md:text-7xl" />
+            <div className="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)] rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 flex flex-col items-center justify-center mx-auto animate-float transition-all duration-300 px-4 md:px-6 overflow-hidden">
+              <Logo className="w-full h-auto max-w-[85%] relative z-20 drop-shadow-[0_10px_30px_rgba(0,0,0,0.3)]" textClassName="text-4xl md:text-7xl" />
               <div className="absolute inset-0 bg-gradient-to-tr from-white to-slate-100/50 pointer-events-none opacity-50"></div>
             </div>
           </div>

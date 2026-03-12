@@ -138,8 +138,8 @@ export const Services: React.FC = () => {
 
                             {/* Description */}
                             <div className="md:w-[50%] md:min-h-[200px] flex flex-col justify-start gap-4 md:gap-6">
-                                <p className="text-base md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
-                                <p className="text-xs md:text-base text-brand-teal uppercase tracking-[0.2em] font-mono leading-relaxed">{service.details}</p>
+                                <p className="text-sm md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
+                                <p className="text-[10px] md:text-base text-brand-teal uppercase tracking-[0.15em] md:tracking-[0.2em] font-mono leading-relaxed">{service.details}</p>
                             </div>
                         </div>
                     </Reveal>

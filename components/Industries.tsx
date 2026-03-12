@@ -102,7 +102,7 @@ export const Industries: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 mb-10 md:mb-20 pt-16 relative z-10 pointer-events-none">
         <Reveal width="100%" variant="zoom">
           <div className="text-center">
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-chunky font-black text-brand-black mb-6 md:mb-12 leading-none uppercase tracking-tighter">Industries</h2>
+            <h2 className="text-3xl sm:text-5xl md:text-8xl font-chunky font-black text-brand-black mb-4 md:mb-12 leading-none uppercase tracking-tighter">Industries</h2>
             <p className="text-slate-500 max-w-3xl mx-auto font-sans font-medium text-lg md:text-2xl leading-relaxed px-4">
                 We provide digital marketing services for industries where <span className="text-brand-purple font-extrabold">Clarity and trust matter most.</span>
             </p>

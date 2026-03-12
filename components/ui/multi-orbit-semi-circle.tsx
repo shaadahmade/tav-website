@@ -188,11 +188,11 @@ const APPS = [
   },
 ];
 
-// Orbiting ring configuration
+// Orbiting ring configuration - Increased radius factors to prevent overlapping on small screens
 const RINGS = [
-  { count: 3, radiusFactor: 0.22, duration: 20, reverse: false, appOffset: 0 },
-  { count: 5, radiusFactor: 0.38, duration: 30, reverse: true, appOffset: 3 },
-  { count: 7, radiusFactor: 0.52, duration: 45, reverse: false, appOffset: 8 },
+  { count: 3, radiusFactor: 0.45, duration: 20, reverse: false, appOffset: 0 },
+  { count: 5, radiusFactor: 0.72, duration: 30, reverse: true, appOffset: 3 },
+  { count: 7, radiusFactor: 0.95, duration: 45, reverse: false, appOffset: 8 },
 ];
 
 interface OrbitIconProps {
@@ -244,7 +244,7 @@ function OrbitIcon({ app, radius, totalCount, index, duration, reverse, iconSize
           {app.icon}
 
           {/* Tooltip */}
-          <div className="absolute bottom-[calc(100%+10px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap rounded-md bg-zinc-900 border border-white/10 px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest text-white shadow-2xl z-[100]">
+          <div className="absolute bottom-[calc(100%+10px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap rounded-md bg-zinc-900 border border-white/10 px-2 py-1 text-[8px] md:text-[10px] uppercase font-bold tracking-widest text-white shadow-2xl z-[100]">
             {app.name}
           </div>
         </div>
@@ -266,8 +266,9 @@ export default function MultiOrbitSemiCircle() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const size = Math.min(containerWidth * 0.95, 1060);
-  const iconSize = size < 400 ? 44 : size < 700 ? 56 : 68;
+  const size = Math.min(containerWidth * 0.95, 1000);
+  const isMobile = size < 500;
+  const iconSize = size < 350 ? 30 : size < 400 ? 34 : size < 600 ? 44 : size < 900 ? 56 : 64;
 
   if (!size) return <div id="orbit-wrap" className="w-full h-96" />;
 
@@ -314,9 +315,9 @@ export default function MultiOrbitSemiCircle() {
         />
 
         {/* Center label */}
-        <div className="absolute flex flex-col items-center justify-center z-10">
-          <span className="text-white/80 font-mono text-[10px] uppercase tracking-[0.3em] mb-1">Powered by</span>
-          <span className="font-chunky font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-400 to-zinc-600 text-2xl md:text-3xl leading-none uppercase">AI</span>
+        <div className="absolute flex flex-col items-center justify-center z-10 pointer-events-none">
+          <span className="text-white/60 font-mono text-[8px] md:text-[10px] uppercase tracking-[0.3em] mb-1">Powered by</span>
+          <span className="font-chunky font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-400 to-zinc-600 text-xl md:text-3xl leading-none uppercase">AI</span>
         </div>
 
         {/* Orbiting rings */}

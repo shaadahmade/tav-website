@@ -255,10 +255,10 @@ export const MarketingAutomationService: React.FC = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="font-chunky font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] leading-[0.95] mb-8 text-white tracking-tighter"
+              className="font-chunky font-black text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] leading-[1] md:leading-[0.95] mb-6 md:mb-8 text-white tracking-tighter"
             >
-              Automation <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-magenta animate-gradient-slow text-[min(15vw,8rem)]">
+              Automation <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-magenta animate-gradient-slow text-5xl sm:text-[min(12vw,8rem)]">
                 Without Limits
               </span>
             </motion.h1>
@@ -283,7 +283,7 @@ export const MarketingAutomationService: React.FC = () => {
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div className="text-4xl md:text-6xl font-chunky font-black text-white mb-2 drop-shadow-[0_10px_30px_rgba(255,255,255,0.1)]">{s.value}</div>
-                <div className="text-[10px] md:text-xs text-zinc-500 font-mono uppercase tracking-[0.2em] max-w-[120px]">{s.label}</div>
+                <div className="text-xs md:text-sm text-zinc-400 font-mono uppercase tracking-[0.1em] md:tracking-[0.2em] max-w-[140px]">{s.label}</div>
               </div>
             ))}
           </motion.div>
@@ -354,7 +354,7 @@ export const MarketingAutomationService: React.FC = () => {
                       <div className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <div className="w-2 h-2 rounded-full bg-red-500" />
                       </div>
-                      <p className="text-zinc-500 text-sm line-through">{item.problem}</p>
+                      <p className="text-zinc-400 text-sm line-through">{item.problem}</p>
                     </div>
                     <div className="flex items-start gap-4">
                       <CheckCircle2 className="h-5 w-5 text-brand-teal flex-shrink-0 mt-0.5" />
@@ -382,7 +382,7 @@ export const MarketingAutomationService: React.FC = () => {
           <Reveal width="100%" variant="up">
             <div className="text-center mb-20">
 
-              <h2 className="text-4xl md:text-7xl font-chunky font-black text-white leading-tight tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-7xl font-chunky font-black text-white leading-tight tracking-tight mb-4 md:mb-6">
                 The AI stack that powers it all.
               </h2>
               <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
@@ -425,9 +425,9 @@ export const MarketingAutomationService: React.FC = () => {
           <Reveal width="100%" variant="up">
             <div className="text-center mb-16">
 
-              <h2 className="text-4xl md:text-6xl font-chunky font-black text-white leading-tight mb-4">
-                Connect your stack to<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-teal">Agentic Intelligence.</span>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-chunky font-black text-white leading-tight mb-4 text-balance">
+                Connect your stack to<br className="hidden sm:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-teal ml-2 sm:ml-0">Agentic Intelligence.</span>
               </h2>
               <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
                 Our automation layer sits on top of your existing tools, orchestrating data and tasks across your entire marketing ecosystem.
@@ -484,7 +484,7 @@ export const MarketingAutomationService: React.FC = () => {
           <Reveal width="100%" variant="up">
             <div className="text-center mb-20 md:mb-28">
 
-              <h2 className="text-4xl sm:text-6xl md:text-8xl font-chunky font-black text-white leading-[0.95] tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-5xl md:text-8xl font-chunky font-black text-white leading-[1] md:leading-[0.95] tracking-tight mb-4 md:mb-6 text-balance">
                 Every channel.{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-magenta">Automated.</span>
               </h2>
@@ -538,7 +538,7 @@ export const MarketingAutomationService: React.FC = () => {
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <Reveal width="100%" variant="zoom">
-            <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-chunky font-black text-white leading-[1.05] mb-8 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-chunky font-black text-white leading-[1.1] md:leading-[1.05] mb-6 md:mb-8 tracking-tight text-balance">
               Let's build AI workflows<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-magenta to-brand-teal">
                 that work for you.

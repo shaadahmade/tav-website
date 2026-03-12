@@ -156,7 +156,7 @@ export default function TimeLine_01({
                 aria-current={isActive ? "true" : "false"}
               >
                 {/* Sticky meta column */}
-                <div className="top-32 flex h-min w-72 shrink-0 items-start gap-4 md:sticky z-10 transition-all duration-500">
+                <div className="top-24 flex h-min w-full md:w-72 shrink-0 items-start gap-4 md:sticky z-10 transition-all duration-500">
                   <div className="flex items-start gap-4">
                     <div className={`p-3 rounded-2xl transition-all duration-500 ${
                       isActive ? "bg-brand-teal text-white shadow-[0_0_20px_rgba(20,184,166,0.5)]" : "bg-zinc-900 text-zinc-600"

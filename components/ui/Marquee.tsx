@@ -24,7 +24,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
         {[...Array(4)].map((_, i) => (
           <span 
             key={i} 
-            className={`mx-2 md:mx-4 text-6xl sm:text-8xl md:text-[10rem] font-chunky font-black uppercase ${transparent ? 'text-transparent stroke-text' : 'text-brand-black/5 dark:text-white/5'}`}
+            className={`mx-2 md:mx-4 text-3xl sm:text-5xl md:text-[8rem] font-chunky font-black uppercase ${transparent ? 'text-transparent stroke-text' : 'text-brand-black/5 dark:text-white/5'}`}
             style={transparent ? { WebkitTextStroke: '1px rgba(100,100,100,0.15)' } : {}}
           >
             {text}
@@ -38,7 +38,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
         {[...Array(4)].map((_, i) => (
           <span 
             key={i} 
-            className={`mx-2 md:mx-4 text-6xl sm:text-8xl md:text-[10rem] font-chunky font-black uppercase ${transparent ? 'text-transparent stroke-text' : 'text-brand-black/5 dark:text-white/5'}`}
+            className={`mx-2 md:mx-4 text-3xl sm:text-5xl md:text-[8rem] font-chunky font-black uppercase ${transparent ? 'text-transparent stroke-text' : 'text-brand-black/5 dark:text-white/5'}`}
             style={transparent ? { WebkitTextStroke: '1px rgba(100,100,100,0.15)' } : {}}
           >
             {text}

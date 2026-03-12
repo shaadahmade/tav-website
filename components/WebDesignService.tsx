@@ -111,26 +111,11 @@ export const WebDesignService: React.FC = () => {
       {/* ============ HERO SECTION ============ */}
       <section className="dark relative min-h-[100svh] flex flex-col overflow-hidden bg-zinc-950">
 
-        {/* Sparkles Background */}
-        <div className="absolute inset-0 z-0">
-          <SparklesCore
-            id="web-design-sparkles"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={70}
-            particleColor="#14b8a6"
-            speed={2}
-            className="w-full h-full"
-          />
-        </div>
-
         {/* Radial Gradient Blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(90vw,700px)] h-[min(90vw,700px)] bg-brand-teal/10 rounded-full blur-[150px]"></div>
           <div className="absolute top-1/4 right-0 w-[min(60vw,500px)] h-[min(60vw,500px)] bg-brand-magenta/10 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-1/4 left-0 w-[min(50vw,400px)] h-[min(50vw,400px)] bg-brand-purple/10 rounded-full blur-[100px]"></div>
-          <div className="absolute inset-0 opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
         </div>
 
         <HeroHighlight
@@ -145,8 +130,8 @@ export const WebDesignService: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="font-chunky font-black text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] leading-[1.05] mb-6 md:mb-8 text-white tracking-tight"
           >
-            Websites That Make Customers <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-magenta animate-gradient-slow text-[min(15vw,8rem)]">
+            Websites That Make Customers <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-magenta animate-gradient-slow text-4xl sm:text-[min(12vw,8rem)]">
               Understand You In Seconds
             </span>
           </motion.h1>
@@ -174,7 +159,7 @@ export const WebDesignService: React.FC = () => {
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-5xl font-chunky font-black text-white mb-1">{s.number}</div>
-                <div className="text-xs md:text-sm text-zinc-500 font-mono uppercase tracking-widest">{s.label}</div>
+                <div className="text-xs md:text-sm text-zinc-400 font-mono uppercase tracking-wide md:tracking-widest">{s.label}</div>
               </div>
             ))}
           </motion.div>
@@ -230,7 +215,7 @@ export const WebDesignService: React.FC = () => {
           <Reveal width="100%" variant="up">
             <div className="text-center mb-20 md:mb-32">
               <span className="text-brand-teal font-mono text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Our Services</span>
-              <h2 className="text-4xl sm:text-6xl md:text-8xl font-chunky font-black text-white leading-[0.95] tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-5xl md:text-8xl font-chunky font-black text-white leading-[1] md:leading-[0.95] tracking-tight mb-4 md:mb-6 text-balance">
                 Every type of website.{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-magenta">Done right.</span>
               </h2>
@@ -263,20 +248,6 @@ export const WebDesignService: React.FC = () => {
 
       {/* ============ CTA SECTION ============ */}
       <section id="contact" className="dark relative overflow-hidden bg-black rounded-t-[2.5rem] md:rounded-t-[5rem] -mt-10 md:-mt-20 z-10 py-24 md:py-40 shadow-[0_-50px_100px_rgba(0,0,0,0.5)]">
-
-        {/* Sparkles overlay in CTA */}
-        <div className="absolute inset-0 z-0">
-          <SparklesCore
-            id="cta-sparkles-web"
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={40}
-            particleColor="#14b8a6"
-            speed={1.5}
-            className="w-full h-full"
-          />
-        </div>
 
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(80vw,600px)] h-[min(80vw,600px)] bg-brand-teal/10 rounded-full blur-[120px]"></div>

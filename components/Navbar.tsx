@@ -170,12 +170,12 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 md:hidden relative z-50">
+        <div className="flex items-center md:hidden relative z-50 h-10">
            <button
-             className="text-white hover:text-brand-orange transition-colors"
+             className="text-white hover:text-brand-orange transition-colors flex items-center justify-center"
              onClick={() => setIsOpen(!isOpen)}
            >
-             {isOpen ? <X size={28} /> : <Menu size={28} />}
+             {isOpen ? <X size={24} /> : <Menu size={24} />}
            </button>
         </div>
       </div>
@@ -204,12 +204,12 @@ export const Navbar: React.FC = () => {
 
                {/* Mobile Service Pages */}
                <div className="flex flex-col items-center gap-4 py-4 border-t border-white/5 w-full">
-                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em]">Our Expertise</span>
+                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] text-center">Our Expertise</span>
                    {servicePages.map((page) => (
                         <Link 
                             key={page.path}
                             to={page.path}
-                            className="text-zinc-300 font-chunky font-bold text-lg hover:text-brand-teal transition-colors"
+                            className="text-zinc-300 font-chunky font-bold text-lg hover:text-brand-teal transition-colors text-center"
                             onClick={() => {
                                 setIsOpen(false);
                                 setActiveTab('');
