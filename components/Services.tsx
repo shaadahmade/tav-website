@@ -7,59 +7,65 @@ const services = [
   {
     title: "Website Design",
     description: "Your customer shouldn't have to read your website carefully to know what to do next.",
-    details: "What you do • Who it's for • How to take the next step",
+    details: "What you do • Who it's for • What to do next",
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop",
     link: "/services/web-design"
   },
   {
     title: "Website Dev",
     description: "A website that works the way customers assume it should.",
-    details: "Load fast • Stay stable • Feel obvious to use",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+    details: "Loads fast • Stays stable • Frustration-free experience",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+    link: "/services/web-development"
   },
   {
     title: "App Dev",
     description: "Good apps don't need instructions. They explain themselves.",
-    details: "Feel familiar • Clear actions • Work smoothly",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop"
+    details: "Familiar from first tap • Clear next action • Works smoothly",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
+    link: "/services/app-development"
   },
   {
     title: "SEO",
     description: "We don't chase traffic. We bring high-intent customers already searching for your business.",
-    details: "Search intent • Answer questions • Compound visibility",
+    details: "High-intent keywords • Real questions answered • Visibility that grows month after month",
     image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2070&auto=format&fit=crop",
     link: "/services/seo"
   },
   {
     title: "Marketing Automation",
     description: "Good marketing automation doesn't replace human interaction. It makes sure customers hear from you at the right time.",
-    details: "Follow up instantly • Send relevant messages • Guide leads",
+    details: "Follow up instantly • Send relevant messages • Guide leads step by step",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     link: "/services/marketing-automation"
   },
   {
     title: "Performance Marketing",
     description: "Good performance marketing isn't about spending more. It's about making every click count.",
-    details: "Ready to act • Clear offers • Real results",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+    details: "Reach people ready to act • Make the offer clear • Turn ad spend into real results",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    link: "/services/performance-marketing"
   },
   {
     title: "Social Media",
-    description: "Social media marketing that helps customers recognize your brand before they read a word.",
-    details: "Clear message • Consistent visuals • Human-sounding content",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop"
+    description: "Social media marketing should help customers recognize your brand before they read a word.",
+    details: "One clear message per post • Consistent recognizable visuals • Content that keeps readers hooked",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
+    link: "/services/social-media"
   },
   {
     title: "Graphic Design",
-    description: "Good graphic design doesn't decorate your brand. It explains it.",
-    details: "Understand faster • Remember longer • Trust sooner",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799314346d?q=80&w=2070&auto=format&fit=crop"
+    description: "If people have to think where to click, your design has already failed.",
+    details: "Understand your message faster • Remember your brand longer • Trust you sooner",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799314346d?q=80&w=2070&auto=format&fit=crop",
+    link: "/services/graphic-design"
   },
   {
     title: "Content Marketing",
-    description: "Good content marketing doesn't try to impress. It helps customers understand.",
-    details: "Answers real questions • Explains decisions • Builds trust",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2073&auto=format&fit=crop"
+    description: "Good content marketing doesn't try to impress. It answers the exact questions stopping your customer from buying.",
+    details: "Answers real questions • Simplifies decisions • Builds trust before the sale",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2073&auto=format&fit=crop",
+    link: "/services/content-marketing"
   }
 ];
 

@@ -13,6 +13,13 @@ const CTA = lazy(() => import('./components/CTA').then(module => ({ default: mod
 const SEOService = lazy(() => import('./components/SEOService').then(module => ({ default: module.SEOService })));
 const WebDesignService = lazy(() => import('./components/WebDesignService').then(module => ({ default: module.WebDesignService })));
 const MarketingAutomationService = lazy(() => import('./components/MarketingAutomationService').then(module => ({ default: module.MarketingAutomationService })));
+const SocialMediaService = lazy(() => import('./components/SocialMediaService').then(module => ({ default: module.SocialMediaService })));
+const PerformanceMarketingService = lazy(() => import('./components/PerformanceMarketingService').then(module => ({ default: module.PerformanceMarketingService })));
+const ContentMarketingService = lazy(() => import('./components/ContentMarketingService').then(module => ({ default: module.ContentMarketingService })));
+const WebDevelopmentService = lazy(() => import('./components/WebDevelopmentService').then(module => ({ default: module.WebDevelopmentService })));
+const AppDevelopmentService = lazy(() => import('./components/AppDevelopmentService').then(module => ({ default: module.AppDevelopmentService })));
+const GraphicDesignService = lazy(() => import('./components/GraphicDesignService').then(module => ({ default: module.GraphicDesignService })));
+const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
 
 // Minimal loader for sections
 const SectionLoader = () => (
@@ -64,6 +71,41 @@ function App() {
           <Route path="/services/marketing-automation" element={
             <Suspense fallback={<SectionLoader />}>
               <MarketingAutomationService />
+            </Suspense>
+          } />
+          <Route path="/services/social-media" element={
+            <Suspense fallback={<SectionLoader />}>
+              <SocialMediaService />
+            </Suspense>
+          } />
+          <Route path="/services/performance-marketing" element={
+            <Suspense fallback={<SectionLoader />}>
+              <PerformanceMarketingService />
+            </Suspense>
+          } />
+          <Route path="/services/content-marketing" element={
+            <Suspense fallback={<SectionLoader />}>
+              <ContentMarketingService />
+            </Suspense>
+          } />
+          <Route path="/services/web-development" element={
+            <Suspense fallback={<SectionLoader />}>
+              <WebDevelopmentService />
+            </Suspense>
+          } />
+          <Route path="/services/app-development" element={
+            <Suspense fallback={<SectionLoader />}>
+              <AppDevelopmentService />
+            </Suspense>
+          } />
+          <Route path="/services/graphic-design" element={
+            <Suspense fallback={<SectionLoader />}>
+              <GraphicDesignService />
+            </Suspense>
+          } />
+          <Route path="/about" element={
+            <Suspense fallback={<SectionLoader />}>
+              <About />
             </Suspense>
           } />
         </Routes>

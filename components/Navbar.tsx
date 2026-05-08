@@ -8,15 +8,21 @@ import { NavBar as TubelightNavBar } from './ui/tubelight-navbar';
 
 const navItems = [
   { name: 'Home', url: '/', icon: Home },
-  { name: 'Problem', url: '/#problem', icon: User },
+  { name: 'About', url: '/about', icon: User },
   { name: 'Philosophy', url: '/#philosophy', icon: Briefcase },
   { name: 'Contact', url: '/#cta-btn', icon: MessageSquare },
 ];
 
 const servicePages = [
-  { label: 'SEO', path: '/services/seo' },
-  { label: 'Web Design', path: '/services/web-design' },
-  { label: 'Marketing Automation', path: '/services/marketing-automation' },
+  { label: 'Social Media', path: '/services/social-media', category: 'Marketing' },
+  { label: 'Marketing Automation', path: '/services/marketing-automation', category: 'Marketing' },
+  { label: 'Performance Marketing', path: '/services/performance-marketing', category: 'Marketing' },
+  { label: 'Content Marketing', path: '/services/content-marketing', category: 'Marketing' },
+  { label: 'SEO', path: '/services/seo', category: 'Marketing' },
+  { label: 'Web Design', path: '/services/web-design', category: 'Design & Dev' },
+  { label: 'Web Development', path: '/services/web-development', category: 'Design & Dev' },
+  { label: 'App Development', path: '/services/app-development', category: 'Design & Dev' },
+  { label: 'Graphic Design', path: '/services/graphic-design', category: 'Design & Dev' },
 ];
 
 export const Navbar: React.FC = () => {
@@ -60,9 +66,10 @@ export const Navbar: React.FC = () => {
     
     if (path === '/') {
         if (!hash || hash === '#') setActiveTab('Home');
-        else if (hash.includes('problem')) setActiveTab('Problem');
         else if (hash.includes('philosophy')) setActiveTab('Philosophy');
         else if (hash.includes('cta-btn') || hash.includes('contact')) setActiveTab('Contact');
+    } else if (path === '/about') {
+        setActiveTab('About');
     } else {
         setActiveTab('');
     }
@@ -137,24 +144,45 @@ export const Navbar: React.FC = () => {
                     Our Services <ChevronDown size={14} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <div 
-                  className={`absolute top-full right-0 mt-2 w-64 bg-zinc-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl z-[100] transition-all duration-300 ${
+                  className={`absolute top-full right-0 mt-2 w-[520px] bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl z-[100] transition-all duration-300 ${
                     isDropdownOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none'
                   }`}
                 >
-                    <div className="flex flex-col gap-1 text-left">
-                        {servicePages.map((page) => (
+                    <div className="grid grid-cols-2 gap-1">
+                      <div>
+                        <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500 px-3 pb-2 pt-1">Marketing & Strategy</p>
+                        {servicePages.filter(p => p.category === 'Marketing').map((page) => (
                             <Link 
                                 key={page.path}
                                 to={page.path} 
-                                className="px-4 py-3 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-all text-sm font-medium"
+                                className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-all text-sm font-medium group"
                                 onClick={() => {
                                   setIsDropdownOpen(false);
                                   setActiveTab('');
                                 }}
                             >
-                                {page.label}
+                              <span className="w-1.5 h-1.5 rounded-full bg-brand-teal opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"></span>
+                              {page.label}
                             </Link>
                         ))}
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500 px-3 pb-2 pt-1">Design & Development</p>
+                        {servicePages.filter(p => p.category === 'Design & Dev').map((page) => (
+                            <Link 
+                                key={page.path}
+                                to={page.path} 
+                                className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-all text-sm font-medium group"
+                                onClick={() => {
+                                  setIsDropdownOpen(false);
+                                  setActiveTab('');
+                                }}
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-brand-purple opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"></span>
+                              {page.label}
+                            </Link>
+                        ))}
+                      </div>
                     </div>
                 </div>
             </div>
@@ -203,13 +231,27 @@ export const Navbar: React.FC = () => {
                ))}
 
                {/* Mobile Service Pages */}
-               <div className="flex flex-col items-center gap-4 py-4 border-t border-white/5 w-full">
-                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] text-center">Our Expertise</span>
-                   {servicePages.map((page) => (
+               <div className="flex flex-col items-center gap-3 py-4 border-t border-white/5 w-full">
+                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] text-center mb-1">Marketing & Strategy</span>
+                   {servicePages.filter(p => p.category === 'Marketing').map((page) => (
                         <Link 
                             key={page.path}
                             to={page.path}
                             className="text-zinc-300 font-chunky font-bold text-lg hover:text-brand-teal transition-colors text-center"
+                            onClick={() => {
+                                setIsOpen(false);
+                                setActiveTab('');
+                            }}
+                        >
+                            {page.label}
+                        </Link>
+                   ))}
+                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] text-center mt-3 mb-1">Design & Development</span>
+                   {servicePages.filter(p => p.category === 'Design & Dev').map((page) => (
+                        <Link 
+                            key={page.path}
+                            to={page.path}
+                            className="text-zinc-300 font-chunky font-bold text-lg hover:text-brand-purple transition-colors text-center"
                             onClick={() => {
                                 setIsOpen(false);
                                 setActiveTab('');

@@ -14,12 +14,12 @@ export const MissionVisionValues: React.FC = () => {
                 <span className="text-3xl font-chunky font-black">M</span>
               </div>
               <h3 className="text-3xl font-chunky font-bold text-brand-black dark:text-white mb-2">OUR MISSION</h3>
-              <p className="text-sm text-brand-teal font-mono uppercase mb-6 tracking-wide">What drives us</p>
+              <p className="text-sm text-brand-teal font-mono uppercase mb-6 tracking-wide">What drives us and what you can expect every single time.</p>
               <ul className="space-y-4 text-slate-600 dark:text-zinc-400 text-sm">
-                <li>• Custom-built experiences that fit your exact needs</li>
-                <li>• Infuse creativity and innovation into every project</li>
-                <li>• Maintain uncompromising quality with ethical approach</li>
-                <li>• Clear, transparent communication at every step</li>
+                <li>• Custom-built experiences that fit your exact needs.</li>
+                <li>• Infuse creativity and innovation into every project we touch.</li>
+                <li>• Maintain uncompromising quality with an ethical, responsible approach.</li>
+                <li>• Clear, transparent communication at every step.</li>
               </ul>
             </div>
           </Reveal>
@@ -31,12 +31,11 @@ export const MissionVisionValues: React.FC = () => {
                 <span className="text-3xl font-chunky font-black">V</span>
               </div>
               <h3 className="text-3xl font-chunky font-bold text-brand-black dark:text-white mb-2">OUR VISION</h3>
-              <p className="text-sm text-brand-purple font-mono uppercase mb-6 tracking-wide">The next level</p>
+              <p className="text-sm text-brand-purple font-mono uppercase mb-6 tracking-wide">The next level of brand excellence</p>
               <ul className="space-y-4 text-slate-600 dark:text-zinc-400 text-sm">
-                <li>• Innovate Ahead of the Industry</li>
-                <li>• Deliver With Speed & Precision</li>
-                <li>• Put Clients at the Heart of Everything</li>
-                <li>• Fuel Long-Term Growth</li>
+                <li>• <strong className="text-brand-black dark:text-zinc-200">Innovate Ahead of the Industry</strong> — Fresh ideas. Modern solutions. A competitive edge you can feel.</li>
+                <li>• <strong className="text-brand-black dark:text-zinc-200">Deliver With Speed &amp; Precision</strong> — On time. Every time. Because your deadlines deserve respect.</li>
+                <li>• <strong className="text-brand-black dark:text-zinc-200">Put Clients at the Heart of Everything</strong> — Every strategy, every design, every deliverable built around your needs.</li>
               </ul>
             </div>
           </Reveal>
@@ -51,10 +50,10 @@ export const MissionVisionValues: React.FC = () => {
               <p className="text-sm text-brand-orange font-mono uppercase mb-6 tracking-wide">Beliefs you can feel</p>
               <div className="space-y-4 text-slate-600 dark:text-zinc-400">
                 {[
-                  { t: "Integrity", d: "We keep our word, own our decisions." },
-                  { t: "Customer First", d: "Your goals are our commitments." },
-                  { t: "Innovation", d: "Fresh, bold, tailor-made solutions." },
-                  { t: "Sustainability", d: "Future-proof thinking." }
+                  { t: "Integrity", d: "We keep our word, own our decisions, and act with honesty — even when it's inconvenient. You'll always know what's happening, why it's happening, and how it helps your brand grow." },
+                  { t: "Customer First", d: "Your goals aren't 'projects' to us — they're commitments. We design, build, and deliver like your business is our business." },
+                  { t: "Innovation", d: "We don't copy trends or recycle old ideas. We combine creativity + strategy to bring you solutions that feel fresh, bold, and tailor-made." },
+                  { t: "Sustainability", d: "Future-proof thinking. Ethical execution. Work that stays valuable long after it's delivered. Good for your brand. Good for your customers. Good for what comes next." }
                 ].map((v, i) => (
                   <div key={i}>
                     <span className="font-bold text-brand-black dark:text-zinc-200">{v.t}:</span> <span className="text-sm">{v.d}</span>

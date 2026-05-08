@@ -132,7 +132,6 @@ export const Philosophy: React.FC = () => {
                {/* Header */}
                <div className="max-w-4xl mx-auto text-center mb-10 md:mb-32">
                   <Reveal width="100%" variant="up">
-                     <span className="text-brand-orange font-mono font-bold tracking-widest uppercase mb-4 block text-xs md:text-sm">The Process</span>
                      <h3 className="text-2xl sm:text-4xl md:text-7xl font-chunky font-black text-white mb-4 md:mb-8 leading-[1.1]">
                         No Smoke.<br /> No Mirrors.
                      </h3>
@@ -210,7 +209,6 @@ export const Philosophy: React.FC = () => {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                <Reveal width="100%" variant="blur">
-                  <span className="text-brand-teal font-mono font-bold tracking-[0.4em] uppercase mb-8 md:mb-12 block text-xs md:text-sm">The Ethics</span>
                   <h3 className="text-3xl sm:text-5xl md:text-[8rem] font-chunky font-black leading-[1.1] md:leading-[0.9] mb-8 md:mb-32">
                      Quality and Ethics Over <br className="hidden sm:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">Shortcuts.</span>
                   </h3>

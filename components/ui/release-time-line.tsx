@@ -135,7 +135,6 @@ export default function TimeLine_01({
     <section className="py-24 md:py-32 bg-black dark relative z-10">
       <div className="container px-4 md:px-8 mx-auto">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-brand-teal font-mono text-xs font-bold tracking-[0.4em] uppercase mb-4 block">How We Work</span>
           <h2 className="mb-6 text-3xl font-chunky font-black tracking-tight md:text-5xl lg:text-7xl text-white">
             {title}
           </h2>

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3001/services/web-design)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"WebDesignService %{http_code}\\\\n\" \"http://localhost:3001/components/WebDesignService.tsx\")",
+      "Bash(curl -s -o /dev/null -w \"flip-card %{http_code}\\\\n\" \"http://localhost:3001/components/ui/flip-card.tsx\")",
+      "Bash(node *)",
+      "Bash(curl -s -o /dev/null -w \"home %{http_code}\\\\nweb-design %{http_code}\\\\n\" http://localhost:3001/ http://localhost:3001/services/web-design)",
+      "Bash(curl -s \"http://localhost:3001/components/WebDesignService.tsx\" -o /tmp/wds.txt -w \"WebDesignService.tsx %{http_code} %{size_download}b\\\\n\")",
+      "Bash(curl -s \"http://localhost:3001/components/ui/flip-card.tsx\" -o /tmp/fc.txt -w \"flip-card.tsx %{http_code} %{size_download}b\\\\n\")",
+      "mcp__magic__21st_magic_component_builder"
+    ]
+  }
+}

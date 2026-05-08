@@ -31,15 +31,6 @@ const industries: GalleryItem[] = [
     }
   },
   {
-    common: "Food and Beverages",
-    binomial: "Sustaining the world",
-    photo: {
-      url: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2070&auto=format&fit=crop",
-      text: "Culinary arts",
-      by: "Unsplash"
-    }
-  },
-  {
     common: "E-commerce",
     binomial: "Shopping made easy",
     photo: {
@@ -67,16 +58,7 @@ const industries: GalleryItem[] = [
     }
   },
   {
-    common: "Logistics",
-    binomial: "Moving the world",
-    photo: {
-      url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
-      text: "Supply chain",
-      by: "Unsplash"
-    }
-  },
-  {
-    common: "Tourism",
+    common: "Travel & Tourism",
     binomial: "Exploring the globe",
     photo: {
       url: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2070&auto=format&fit=crop",
@@ -85,7 +67,7 @@ const industries: GalleryItem[] = [
     }
   },
   {
-    common: "Startup",
+    common: "Startups",
     binomial: "Innovation and growth",
     photo: {
       url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
