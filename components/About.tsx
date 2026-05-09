@@ -33,14 +33,14 @@ const coreValues = [
   {
     title: 'Integrity',
     body:
-      "We keep our word, own our decisions, and act with honesty — even when it's inconvenient. You'll always know what's happening, why it's happening, and how it helps your brand grow.",
+      "We keep our word, own our decisions, and act with honesty - even when it's inconvenient. You'll always know what's happening, why it's happening, and how it helps your brand grow.",
     icon: <ShieldCheck className="h-6 w-6" />,
     iconWrap: 'bg-brand-teal/10 border-brand-teal/25 text-brand-teal',
   },
   {
     title: 'Customer First',
     body:
-      "Your goals aren't \"projects\" to us — they're commitments. We design, build, and deliver like your business is our business.",
+      "Your goals aren't \"projects\" to us - they're commitments. We design, build, and deliver like your business is our business.",
     icon: <Heart className="h-6 w-6" />,
     iconWrap: 'bg-brand-magenta/10 border-brand-magenta/25 text-brand-magenta',
   },
@@ -95,7 +95,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.25 }}
               className="text-zinc-300 font-sans text-base sm:text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed mb-6"
             >
-              Your business deserves branding that doesn't confuse customers, but convinces them and drives real results — we make that happen.
+              Your business deserves branding that doesn't confuse customers, but convinces them and drives real results - we make that happen.
             </motion.p>
 
             <motion.p

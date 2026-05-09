@@ -112,6 +112,20 @@
   }
 }
 
+/* Horizontal nudge - used by mobile slider arrows to hint swipeability */
+@keyframes pulse-x {
+  0%, 100% {
+    transform: translate(0, -50%);
+  }
+  50% {
+    transform: translate(6px, -50%);
+  }
+}
+
+.animate-pulse-x {
+  animation: pulse-x 1.4s ease-in-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

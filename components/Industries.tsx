@@ -1,6 +1,7 @@
 import React from 'react';
 import { Reveal } from './ui/Reveal';
 import { CircularGallery, GalleryItem } from './ui/circular-gallery';
+import { HorizontalSlider } from './ui/horizontal-slider';
 
 const industries: GalleryItem[] = [
   {
@@ -100,14 +101,14 @@ export const Industries: React.FC = () => {
       </div>
 
       {/* Mobile Horizontal Carousel Layout */}
-      <div className="md:hidden w-full pb-16 overflow-hidden">
-        <div className="flex overflow-x-auto gap-4 px-4 pb-8 snap-x snap-mandatory hide-scrollbar">
+      <div className="md:hidden w-full pb-16">
+        <HorizontalSlider className="flex overflow-x-auto gap-4 px-4 pb-8 snap-x snap-mandatory hide-scrollbar">
           {industries.map((item, i) => (
             <div key={i} className="relative min-w-[85vw] sm:min-w-[60vw] h-[400px] shrink-0 snap-center rounded-3xl shadow-xl overflow-hidden group border border-slate-100">
-               <img 
-                 src={item.photo.url} 
-                 alt={item.photo.text} 
-                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110" 
+               <img
+                 src={item.photo.url}
+                 alt={item.photo.text}
+                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
                />
                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                <div className="absolute bottom-0 left-0 p-6 text-white w-full">
@@ -116,7 +117,7 @@ export const Industries: React.FC = () => {
                </div>
             </div>
           ))}
-        </div>
+        </HorizontalSlider>
       </div>
 
     </section>

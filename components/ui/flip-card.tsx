@@ -15,7 +15,7 @@ export interface CardFlipProps {
 export default function CardFlip({
   title = 'Build MVPs Fast',
   subtitle = 'Launch your idea in record time',
-  description = 'Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library.',
+  description = 'Copy, paste, customize-and launch your MVP faster than ever with our developer-first component library.',
   features = [
     'Copy & Paste Ready',
     'Developer-First',
@@ -103,13 +103,6 @@ export default function CardFlip({
             </p>
           </div>
 
-          {/* Bottom indicator */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-            <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 group-hover:text-primary transition-colors">
-              <span>Flip for details</span>
-              <ArrowRight className="h-3 w-3 animate-bounce-x" />
-            </div>
-          </div>
         </div>
 
         {/* Back of card */}

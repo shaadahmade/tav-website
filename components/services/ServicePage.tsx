@@ -4,6 +4,7 @@ import { Reveal } from '../ui/Reveal';
 import { Marquee } from '../ui/Marquee';
 import { GlassButton } from '../ui/glass-button';
 import { FAQAccordion, type FAQItem } from '../ui/faq-accordion';
+import { HorizontalSlider } from '../ui/horizontal-slider';
 import CardFlip from '../ui/flip-card';
 import { Check } from 'lucide-react';
 
@@ -26,7 +27,7 @@ export interface ServicePageData {
     titleLead: string;
     titleAccent: string;
     intro: string;
-    /** mp4 URL — autoplayed, looped, muted */
+    /** mp4 URL - autoplayed, looped, muted */
     videoUrl: string;
     /** poster image fallback if video fails / before load */
     posterUrl?: string;
@@ -87,7 +88,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
     <>
       {/* ============ HERO ============ */}
       <section className="dark relative min-h-[100svh] flex flex-col overflow-hidden bg-zinc-950">
-        {/* Background video */}
+        {/* Background video - visible with readable text overlay */}
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -96,20 +97,22 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
             playsInline
             preload="auto"
             poster={hero.posterUrl}
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
             aria-hidden
           >
             <source src={hero.videoUrl} type="video/mp4" />
           </video>
-          {/* Tint + grain overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/70 via-zinc-950/60 to-zinc-950" />
+          {/* Vignette: dark only at top (under nav) and bottom (for marquee transition); preserve middle for video clarity. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/25 to-zinc-950" />
+          {/* Subtle radial darkening behind text for legibility without crushing the video */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.15)_45%,transparent_75%)]" />
           <div className="absolute inset-0 opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
         </div>
 
-        {/* Decorative blobs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(90vw,700px)] h-[min(90vw,700px)] bg-brand-teal/10 rounded-full blur-[150px]" />
-          <div className="absolute top-1/4 right-0 w-[min(60vw,500px)] h-[min(60vw,500px)] bg-brand-magenta/10 rounded-full blur-[120px]" />
+        {/* Decorative brand blobs (lighter so they don't fight the video) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 mix-blend-screen">
+          <div className="absolute top-1/4 right-0 w-[min(60vw,500px)] h-[min(60vw,500px)] bg-brand-magenta/15 rounded-full blur-[140px]" />
+          <div className="absolute bottom-1/4 left-0 w-[min(60vw,500px)] h-[min(60vw,500px)] bg-brand-teal/15 rounded-full blur-[140px]" />
         </div>
 
         <div className="flex-1 flex items-center justify-center pt-28 pb-24 md:pt-40 md:pb-32 relative z-10">
@@ -227,7 +230,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
             </div>
           </Reveal>
 
-          <div className="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible gap-6 md:gap-8 -mx-4 px-4 md:mx-0 md:px-0">
+          <HorizontalSlider className="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible gap-6 md:gap-8 -mx-4 px-4 md:mx-0 md:px-0">
             {services.items.map((s, i) => (
               <div key={s.title} className="min-w-[85vw] sm:min-w-[400px] md:min-w-0 snap-center">
                 <Reveal width="100%" variant="up" delay={i * 0.08}>
@@ -242,7 +245,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
                 </Reveal>
               </div>
             ))}
-          </div>
+          </HorizontalSlider>
         </div>
       </section>
 

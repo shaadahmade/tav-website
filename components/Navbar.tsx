@@ -150,11 +150,10 @@ export const Navbar: React.FC = () => {
                 >
                     <div className="grid grid-cols-2 gap-1">
                       <div>
-                        <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500 px-3 pb-2 pt-1">Marketing & Strategy</p>
                         {servicePages.filter(p => p.category === 'Marketing').map((page) => (
-                            <Link 
+                            <Link
                                 key={page.path}
-                                to={page.path} 
+                                to={page.path}
                                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-all text-sm font-medium group"
                                 onClick={() => {
                                   setIsDropdownOpen(false);
@@ -167,11 +166,10 @@ export const Navbar: React.FC = () => {
                         ))}
                       </div>
                       <div>
-                        <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500 px-3 pb-2 pt-1">Design & Development</p>
                         {servicePages.filter(p => p.category === 'Design & Dev').map((page) => (
-                            <Link 
+                            <Link
                                 key={page.path}
-                                to={page.path} 
+                                to={page.path}
                                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-all text-sm font-medium group"
                                 onClick={() => {
                                   setIsDropdownOpen(false);
@@ -232,9 +230,8 @@ export const Navbar: React.FC = () => {
 
                {/* Mobile Service Pages */}
                <div className="flex flex-col items-center gap-3 py-4 border-t border-white/5 w-full">
-                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] text-center mb-1">Marketing & Strategy</span>
                    {servicePages.filter(p => p.category === 'Marketing').map((page) => (
-                        <Link 
+                        <Link
                             key={page.path}
                             to={page.path}
                             className="text-zinc-300 font-chunky font-bold text-lg hover:text-brand-teal transition-colors text-center"
@@ -246,9 +243,8 @@ export const Navbar: React.FC = () => {
                             {page.label}
                         </Link>
                    ))}
-                   <span className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] text-center mt-3 mb-1">Design & Development</span>
                    {servicePages.filter(p => p.category === 'Design & Dev').map((page) => (
-                        <Link 
+                        <Link
                             key={page.path}
                             to={page.path}
                             className="text-zinc-300 font-chunky font-bold text-lg hover:text-brand-purple transition-colors text-center"

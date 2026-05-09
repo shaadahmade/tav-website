@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import type { ServicePageData } from './ServicePage';
 
-// ─── VIDEO ASSETS (Pexels CDN — public CC0, swap for owned assets later) ────
+// ─── VIDEO ASSETS (Pexels CDN - public CC0, swap for owned assets later) ────
 // All URLs verified 200 OK. Each service gets a unique, theme-matched video.
 const HERO_VIDEOS = {
   socialMedia: 'https://videos.pexels.com/video-files/855564/855564-hd_1920_1080_24fps.mp4',
@@ -88,7 +88,7 @@ export const socialMediaServiceData: ServicePageData = {
         title: 'Twitter (X) Marketing',
         subtitle: 'Stay visible in a feed where attention disappears in seconds.',
         description:
-          'Our content makes your audience stop scrolling because your tweet feels worth reacting to. They reply, quote, or engage instead of just passing by — and they see your brand inside trends without it feeling forced.',
+          'Our content makes your audience stop scrolling because your tweet feels worth reacting to. They reply, quote, or engage instead of just passing by - and they see your brand inside trends without it feeling forced.',
         features: ['Worth Reacting To', 'Quote-Worthy Replies', 'Natural Trend Fit', 'Stays Visible'],
         icon: <Twitter className="h-6 w-6 text-white" />,
         color: '#0f172a',
@@ -108,7 +108,7 @@ export const socialMediaServiceData: ServicePageData = {
     title: 'Attention is won',
     titleAccent: 'in seconds.',
     subtitle:
-      'People are seeing content like yours every day. The difference is — some get ignored, some get remembered. Contact us to make sure you\'re the one they remember.',
+      'People are seeing content like yours every day. The difference is - some get ignored, some get remembered. Contact us to make sure you\'re the one they remember.',
     buttonText: 'Contact Us',
   },
   faqs: [
@@ -122,7 +122,7 @@ export const socialMediaServiceData: ServicePageData = {
     },
     {
       q: 'Which platforms should my business focus on?',
-      a: "You don't need to be everywhere. You need to be where your audience is already paying attention. We help you identify the right platforms — whether that's Instagram, LinkedIn, Facebook, X, or YouTube — based on your business model and target audience.",
+      a: "You don't need to be everywhere. You need to be where your audience is already paying attention. We help you identify the right platforms - whether that's Instagram, LinkedIn, Facebook, X, or YouTube - based on your business model and target audience.",
     },
     {
       q: 'How long does it take to see results from social media marketing?',
@@ -249,7 +249,7 @@ export const marketingAutomationData: ServicePageData = {
     title: 'Respond faster',
     titleAccent: 'than your competition.',
     subtitle:
-      "The moment a lead shows interest — they're already considering other options. Contact us and let's build a system that responds instantly.",
+      "The moment a lead shows interest - they're already considering other options. Contact us and let's build a system that responds instantly.",
     buttonText: 'Contact Us',
   },
   faqs: [
@@ -267,7 +267,7 @@ export const marketingAutomationData: ServicePageData = {
     },
     {
       q: 'Is marketing automation suitable for small businesses?',
-      a: 'Yes — and in fact, small businesses benefit the most. Automation helps you respond instantly without hiring a big team, stay consistent with follow-ups, and compete with larger brands.',
+      a: 'Yes - and in fact, small businesses benefit the most. Automation helps you respond instantly without hiring a big team, stay consistent with follow-ups, and compete with larger brands.',
     },
     {
       q: 'Will automation make my communication feel robotic?',
@@ -291,7 +291,7 @@ export const marketingAutomationData: ServicePageData = {
     },
     {
       q: 'Do I need technical knowledge to use these systems?',
-      a: 'No. We set everything up so it is easy to understand, requires minimal manual effort, and lets you focus on closing deals — not managing tools.',
+      a: 'No. We set everything up so it is easy to understand, requires minimal manual effort, and lets you focus on closing deals - not managing tools.',
     },
   ],
 };
@@ -332,7 +332,7 @@ export const performanceMarketingData: ServicePageData = {
         title: 'Ad Strategy & Funnel Planning',
         subtitle: 'Most paid advertising campaigns fail before they even start.',
         description:
-          "We define who you're targeting (and who you're not), what your customer needs to see first to feel this is relevant, and what makes them click — and gives them enough clarity to act.",
+          "We define who you're targeting (and who you're not), what your customer needs to see first to feel this is relevant, and what makes them click - and gives them enough clarity to act.",
         features: ['Target Definition', 'Relevance Hooks', 'Clarity-First Funnels', 'Action Triggers'],
         icon: <Target className="h-6 w-6 text-white" />,
         color: '#14b8a6',
@@ -341,7 +341,7 @@ export const performanceMarketingData: ServicePageData = {
         title: 'Paid Ads Management',
         subtitle: 'Running ads takes seconds. Watching the wrong people click them costs you daily.',
         description:
-          'We manage ad performance so attention turns into real actions like enquiries, calls, and purchases — across Google, Facebook, and Instagram, where your customers are already spending time.',
+          'We manage ad performance so attention turns into real actions like enquiries, calls, and purchases - across Google, Facebook, and Instagram, where your customers are already spending time.',
         features: ['Google + Meta', 'Real Actions', 'Right-Audience Reach', 'Daily Cost Control'],
         icon: <MousePointerClick className="h-6 w-6 text-white" />,
         color: '#8b5cf6',
@@ -398,7 +398,7 @@ export const performanceMarketingData: ServicePageData = {
     },
     {
       q: 'How is performance marketing different from traditional advertising?',
-      a: 'Unlike traditional advertising, performance marketing focuses on measurable outcomes. Instead of paying for visibility alone, businesses pay for specific actions like conversions, leads, or purchases — making it more cost-effective and data-driven.',
+      a: 'Unlike traditional advertising, performance marketing focuses on measurable outcomes. Instead of paying for visibility alone, businesses pay for specific actions like conversions, leads, or purchases - making it more cost-effective and data-driven.',
     },
     {
       q: 'Which platforms are used in performance marketing?',
@@ -443,7 +443,7 @@ export const contentMarketingData: ServicePageData = {
     titleLead: "People read to",
     titleAccent: 'decide something.',
     intro:
-      "People don't read content to admire it. They read it to decide something. If your content doesn't convince them — someone else's will. We start by understanding what your customers are already searching for, then create content that answers them clearly and useful.",
+      "People don't read content to admire it. They read it to decide something. If your content doesn't convince them - someone else's will. We start by understanding what your customers are already searching for, then create content that answers them clearly and useful.",
     videoUrl: HERO_VIDEOS.contentMarketing,
     gradientFrom: 'from-brand-purple',
     gradientVia: 'via-brand-magenta',
@@ -499,7 +499,7 @@ export const contentMarketingData: ServicePageData = {
         title: 'Social Media Content',
         subtitle: "Posting daily doesn't build a brand. Being understood does.",
         description:
-          "We create social content that shares one clear message per post, helps people quickly understand what you do and why it matters to them, and sounds like a real conversation — not a marketing message.",
+          "We create social content that shares one clear message per post, helps people quickly understand what you do and why it matters to them, and sounds like a real conversation - not a marketing message.",
         features: ['One Message Per Post', 'Clear Why-It-Matters', 'Conversational Tone', 'Brand Builder'],
         icon: <Edit3 className="h-6 w-6 text-white" />,
         color: '#ec4899',
@@ -547,11 +547,11 @@ export const contentMarketingData: ServicePageData = {
     },
     {
       q: 'How is content marketing different from traditional advertising?',
-      a: 'Instead of telling people to buy, content marketing answers their questions, removes doubts, and builds trust — so they decide on their own.',
+      a: 'Instead of telling people to buy, content marketing answers their questions, removes doubts, and builds trust - so they decide on their own.',
     },
     {
       q: 'Do content marketing services really help generate leads?',
-      a: 'Yes — when done right. Content that targets the right intent attracts people who are already looking for solutions. This means better-quality traffic, higher engagement, and more conversions.',
+      a: 'Yes - when done right. Content that targets the right intent attracts people who are already looking for solutions. This means better-quality traffic, higher engagement, and more conversions.',
     },
     {
       q: 'How long does it take to see results from content marketing?',
@@ -571,11 +571,11 @@ export const contentMarketingData: ServicePageData = {
     },
     {
       q: 'Can you improve or optimise our existing content?',
-      a: "Absolutely. Sometimes you don't need new content — you need better content. We refine your existing pages to improve clarity, fix structure, and increase conversions.",
+      a: "Absolutely. Sometimes you don't need new content - you need better content. We refine your existing pages to improve clarity, fix structure, and increase conversions.",
     },
     {
       q: 'Is content marketing suitable for small businesses?',
-      a: 'Yes — especially for small businesses. Content helps you compete with bigger brands by building trust, authority, and visibility without relying only on ads.',
+      a: 'Yes - especially for small businesses. Content helps you compete with bigger brands by building trust, authority, and visibility without relying only on ads.',
     },
     {
       q: 'How do I get started with your content marketing services?',
@@ -592,7 +592,7 @@ export const webDevelopmentData: ServicePageData = {
     titleLead: 'Lose customers in',
     titleAccent: 'invisible moments.',
     intro:
-      "Most websites lose customers in small, invisible moments. Your customer doesn't care how your website is built. If it's slow, confusing, or breaks under pressure — they leave.",
+      "Most websites lose customers in small, invisible moments. Your customer doesn't care how your website is built. If it's slow, confusing, or breaks under pressure - they leave.",
     videoUrl: HERO_VIDEOS.webDevelopment,
     gradientFrom: 'from-brand-teal',
     gradientVia: 'via-brand-purple',
@@ -690,7 +690,7 @@ export const webDevelopmentData: ServicePageData = {
     },
     {
       q: 'Will my website be mobile-friendly?',
-      a: 'Yes — every website we build is fully responsive. Your site will work smoothly across all devices, including smartphones and tablets, delivering an experience similar to apps like Instagram.',
+      a: 'Yes - every website we build is fully responsive. Your site will work smoothly across all devices, including smartphones and tablets, delivering an experience similar to apps like Instagram.',
     },
     {
       q: 'Can I update my website content myself?',
@@ -702,7 +702,7 @@ export const webDevelopmentData: ServicePageData = {
     },
     {
       q: 'Will my website be SEO-friendly?',
-      a: 'Yes — our websites are built with SEO best practices from the ground up. This includes:\n• Fast loading speed\n• Clean code structure\n• Mobile optimization\n• Proper heading and content structure\nSo your website is ready to rank on search engines like Google.',
+      a: 'Yes - our websites are built with SEO best practices from the ground up. This includes:\n• Fast loading speed\n• Clean code structure\n• Mobile optimization\n• Proper heading and content structure\nSo your website is ready to rank on search engines like Google.',
     },
     {
       q: 'Can you redesign my existing website?',
@@ -710,7 +710,7 @@ export const webDevelopmentData: ServicePageData = {
     },
     {
       q: 'Do you offer custom website development?',
-      a: 'Yes — custom development is one of our core strengths. We build solutions that:\n• Match your exact business requirements\n• Fit your workflow\n• Scale as your business grows',
+      a: 'Yes - custom development is one of our core strengths. We build solutions that:\n• Match your exact business requirements\n• Fit your workflow\n• Scale as your business grows',
     },
     {
       q: 'What happens after the website is launched?',
@@ -727,7 +727,7 @@ export const appDevelopmentData: ServicePageData = {
     titleLead: 'A confusing app',
     titleAccent: "doesn't get a second chance.",
     intro:
-      'Most apps are deleted within 24 hours of being downloaded. We build apps where every screen presents one clear action, the experience stays consistent across Android, iOS, and devices, and decisions are based on real user behaviour — not assumptions.',
+      'Most apps are deleted within 24 hours of being downloaded. We build apps where every screen presents one clear action, the experience stays consistent across Android, iOS, and devices, and decisions are based on real user behaviour - not assumptions.',
     videoUrl: HERO_VIDEOS.appDevelopment,
     gradientFrom: 'from-brand-purple',
     gradientVia: 'via-brand-teal',
@@ -829,7 +829,7 @@ export const appDevelopmentData: ServicePageData = {
     },
     {
       q: 'How long does it take to build an app?',
-      a: "Most apps don't fail because they're late — they fail because they're overbuilt. We launch a functional MVP in 4–6 weeks, focused on real user actions. Full-scale apps may take longer depending on complexity.",
+      a: "Most apps don't fail because they're late - they fail because they're overbuilt. We launch a functional MVP in 4–6 weeks, focused on real user actions. Full-scale apps may take longer depending on complexity.",
     },
     {
       q: 'What is MVP in app development?',
@@ -841,7 +841,7 @@ export const appDevelopmentData: ServicePageData = {
     },
     {
       q: 'Will my app work on low-end devices?',
-      a: 'Yes. We build apps that perform smoothly across all devices — from budget smartphones to high-end flagships.',
+      a: 'Yes. We build apps that perform smoothly across all devices - from budget smartphones to high-end flagships.',
     },
     {
       q: 'What makes your app development approach different?',
@@ -853,7 +853,7 @@ export const appDevelopmentData: ServicePageData = {
     },
     {
       q: 'Do you provide post-launch support?',
-      a: "Absolutely. We don't disappear after launch:\n• Regular updates\n• Bug fixes\n• Performance improvements\nApps fail after launch if no one maintains them — we make sure that doesn't happen.",
+      a: "Absolutely. We don't disappear after launch:\n• Regular updates\n• Bug fixes\n• Performance improvements\nApps fail after launch if no one maintains them - we make sure that doesn't happen.",
     },
     {
       q: 'Will my app be scalable as users grow?',
@@ -969,7 +969,7 @@ export const graphicDesignData: ServicePageData = {
     },
     {
       q: 'Do you design for specific industries or all businesses?',
-      a: 'We work with businesses across industries — especially brands that want:\n• More conversions from ads\n• Better-performing websites\n• Strong, consistent branding\nIf your business depends on people taking action, our design works.',
+      a: 'We work with businesses across industries - especially brands that want:\n• More conversions from ads\n• Better-performing websites\n• Strong, consistent branding\nIf your business depends on people taking action, our design works.',
     },
     {
       q: 'Can you help improve my existing designs or only create new ones?',
@@ -981,11 +981,11 @@ export const graphicDesignData: ServicePageData = {
     },
     {
       q: 'How long does a graphic design project take?',
-      a: "It depends on the scope:\n• Ad creatives: a few days\n• Branding: 1–2 weeks\n• Website design: 2–4 weeks\nBut speed is not the priority — we don't rush designs that impact your business decisions.",
+      a: "It depends on the scope:\n• Ad creatives: a few days\n• Branding: 1–2 weeks\n• Website design: 2–4 weeks\nBut speed is not the priority - we don't rush designs that impact your business decisions.",
     },
     {
       q: 'Do your designs help increase conversions?',
-      a: "Yes — that's the entire point. We design to reduce confusion, highlight the right message, and guide users toward action.",
+      a: "Yes - that's the entire point. We design to reduce confusion, highlight the right message, and guide users toward action.",
     },
     {
       q: 'Do you create designs for ads and social media?',
@@ -993,7 +993,7 @@ export const graphicDesignData: ServicePageData = {
     },
     {
       q: 'Can you design websites and landing pages as well?',
-      a: "Yes. We design conversion-focused websites and landing pages with clear structure, easy navigation, and strong call-to-action — so users don't have to think about what to do next.",
+      a: "Yes. We design conversion-focused websites and landing pages with clear structure, easy navigation, and strong call-to-action - so users don't have to think about what to do next.",
     },
   ],
 };
@@ -1006,7 +1006,7 @@ export const webDesignData: ServicePageData = {
     titleLead: 'Customers understand',
     titleAccent: 'in seconds.',
     intro:
-      "Most websites fail for one simple reason. They make customers work too hard to understand the business. We design websites where people don't scroll to figure things out — they instantly know what you do, who it's for, and what to do next.",
+      "Most websites fail for one simple reason. They make customers work too hard to understand the business. We design websites where people don't scroll to figure things out - they instantly know what you do, who it's for, and what to do next.",
     videoUrl: HERO_VIDEOS.webDesign,
     gradientFrom: 'from-brand-teal',
     gradientVia: 'via-brand-purple',
@@ -1029,7 +1029,7 @@ export const webDesignData: ServicePageData = {
     title: 'Every type of website.',
     titleAccent: 'Done right.',
     intro:
-      "We create visuals that lead the viewer naturally — highlighting what's important, what stays with them, and what they should do next.",
+      "We create visuals that lead the viewer naturally - highlighting what's important, what stays with them, and what they should do next.",
     items: [
       {
         title: 'Static Website Design',
@@ -1080,14 +1080,14 @@ export const webDesignData: ServicePageData = {
         title: 'Custom Web Application',
         subtitle: 'Some businesses require more than a standard website.',
         description:
-          'Our team develops custom web applications tailored to specific business needs using modern technologies such as React and Next.js — helping your platform get things done without waiting, reloading, or errors.',
+          'Our team develops custom web applications tailored to specific business needs using modern technologies such as React and Next.js - helping your platform get things done without waiting, reloading, or errors.',
         features: ['React & Next.js', 'Business-Specific', 'Smooth Experience', 'No Errors or Stops'],
         icon: <Rocket className="h-6 w-6 text-white" />,
         color: '#ef4444',
       },
       {
         title: 'Website Redesign',
-        subtitle: "When your website feels outdated, customers don't complain — they just leave.",
+        subtitle: "When your website feels outdated, customers don't complain - they just leave.",
         description:
           'We redesign websites so your customers can reach the next step without opening five tabs, stay engaged instead of dropping off halfway, and focus on your offer instead of getting distracted by the layout.',
         features: ['Improves Clarity', 'Fixes Drop-Off Points', 'Modernizes Design', 'Increases Engagement'],
@@ -1138,7 +1138,7 @@ export const webDesignData: ServicePageData = {
     },
     {
       q: 'Do you offer SEO with website design?',
-      a: 'Yes. We build websites with SEO fundamentals in place, including clean structure, fast loading speed, and proper headings and layout — so your website ranks better and attracts the right audience.',
+      a: 'Yes. We build websites with SEO fundamentals in place, including clean structure, fast loading speed, and proper headings and layout - so your website ranks better and attracts the right audience.',
     },
     {
       q: 'What happens after the website is launched?',
@@ -1150,7 +1150,7 @@ export const webDesignData: ServicePageData = {
     },
     {
       q: 'Why is choosing the right website important?',
-      a: "Because a wrong website doesn't just look bad — it loses customers silently. A clear, well-designed website builds trust instantly, guides decisions, and converts visitors into customers.",
+      a: "Because a wrong website doesn't just look bad - it loses customers silently. A clear, well-designed website builds trust instantly, guides decisions, and converts visitors into customers.",
     },
   ],
 };
@@ -1163,7 +1163,7 @@ export const seoServiceData: ServicePageData = {
     titleLead: 'In front of customers',
     titleAccent: 'when they search.',
     intro:
-      'Most SEO fails because it chases numbers — traffic, rankings, impressions. We focus on putting you in front of customers the moment they type your solution on Google.',
+      'Most SEO fails because it chases numbers - traffic, rankings, impressions. We focus on putting you in front of customers the moment they type your solution on Google.',
     videoUrl: HERO_VIDEOS.seo,
     gradientFrom: 'from-brand-teal',
     gradientVia: 'via-brand-purple',
@@ -1248,7 +1248,7 @@ export const seoServiceData: ServicePageData = {
     title: 'Get found when',
     titleAccent: 'it actually matters.',
     subtitle:
-      'If your customers are already searching — the question is: will they find you or your competitor? Get a free SEO consultation and see where you\'re losing potential customers.',
+      'If your customers are already searching - the question is: will they find you or your competitor? Get a free SEO consultation and see where you\'re losing potential customers.',
     buttonText: 'Get Free SEO Consultation',
   },
   faqs: [
@@ -1262,7 +1262,7 @@ export const seoServiceData: ServicePageData = {
     },
     {
       q: 'How is your approach different from other SEO providers?',
-      a: 'Most SEO efforts focus heavily on traffic numbers. Our approach is centred around search intent and conversions — helping your business appear when potential customers are actively evaluating their options, and guiding them toward taking action.',
+      a: 'Most SEO efforts focus heavily on traffic numbers. Our approach is centred around search intent and conversions - helping your business appear when potential customers are actively evaluating their options, and guiding them toward taking action.',
     },
     {
       q: 'Will SEO work for my business?',
@@ -1274,7 +1274,7 @@ export const seoServiceData: ServicePageData = {
     },
     {
       q: 'Do you focus only on rankings?',
-      a: 'No. Rankings are only one part of the process. We also focus on how users interact with your website — including click-through rates, engagement, and how effectively your pages convert visitors into enquiries.',
+      a: 'No. Rankings are only one part of the process. We also focus on how users interact with your website - including click-through rates, engagement, and how effectively your pages convert visitors into enquiries.',
     },
     {
       q: 'Can you work with our existing website?',
