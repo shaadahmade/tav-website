@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import { Reveal } from './ui/Reveal';
 import { Marquee } from './ui/Marquee';
 import { ContainerScroll } from './ui/container-scroll-animation';
-import { SliderArrows } from './ui/horizontal-slider';
 
 export const Philosophy: React.FC = () => {
    const processScrollRef = useRef<HTMLDivElement>(null);
@@ -147,7 +146,6 @@ export const Philosophy: React.FC = () => {
                   {/* Line */}
                   <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-zinc-800 md:-translate-x-1/2 hidden md:block"></div>
 
-                  <SliderArrows containerRef={processScrollRef} />
                   <div ref={processScrollRef} className="flex overflow-x-auto md:flex-col gap-6 md:gap-0 pb-8 snap-x snap-mandatory hide-scrollbar">
                      {[
                         {
@@ -215,9 +213,7 @@ export const Philosophy: React.FC = () => {
                      Quality and Ethics Over <br className="hidden sm:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">Shortcuts.</span>
                   </h3>
 
-                  <div className="relative max-w-7xl mx-auto mb-24 md:mb-32">
-                  <SliderArrows containerRef={ethicsScrollRef} />
-                  <div ref={ethicsScrollRef} className="flex overflow-x-auto md:flex-row justify-start md:justify-center gap-6 md:gap-10 pb-8 snap-x snap-mandatory hide-scrollbar">
+                  <div ref={ethicsScrollRef} className="flex overflow-x-auto md:flex-row justify-start md:justify-center gap-6 md:gap-10 max-w-7xl mx-auto mb-24 md:mb-32 pb-8 snap-x snap-mandatory hide-scrollbar">
                      {[
                         { t: "No Misleading Ads", d: "We value reputation." },
                         { t: "No Black-hat SEO", d: "We play long term." },
@@ -231,7 +227,6 @@ export const Philosophy: React.FC = () => {
                            <p className="text-slate-400 font-chunky text-lg">{item.d}</p>
                         </div>
                      ))}
-                  </div>
                   </div>
 
                   <p className="text-lg sm:text-2xl md:text-4xl font-chunky font-bold text-white/80 max-w-5xl mx-auto leading-tight px-4">
