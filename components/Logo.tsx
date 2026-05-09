@@ -19,10 +19,10 @@ export const Logo: React.FC<LogoProps> = ({ className = "", textClassName = "tex
   }
 
   return (
-    <img 
-      src="/logo.png" 
-      alt="The Advertising Villa" 
-      className={`object-contain ${className}`} 
+    <img
+      src="/TheAdvertisingVilla.svg"
+      alt="The Advertising Villa"
+      className={`object-contain ${className}`}
       onError={() => setError(true)}
     />
   );

@@ -17,3 +17,15 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// Remove the initial-paint splash once React has mounted.
+// Two rAFs ensure the first frame is committed before we trigger the fade.
+const loader = document.getElementById('initial-loader');
+if (loader) {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      loader.classList.add('loaded');
+      setTimeout(() => loader.remove(), 450);
+    });
+  });
+}
