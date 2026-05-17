@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Reveal } from './ui/Reveal';
 import { GlassButton } from './ui/glass-button';
 import { ShieldCheck, Heart, Sparkles, Leaf, Target, Rocket, Users } from 'lucide-react';
+import { CALENDLY_URL } from '../constants';
 
 const mission = [
   'Custom-built experiences that fit your exact needs.',
@@ -29,32 +30,40 @@ const vision = [
   },
 ];
 
-const coreValues = [
+const coreValues: { title: string; body: string[]; icon: React.ReactNode; iconWrap: string }[] = [
   {
     title: 'Integrity',
-    body:
-      "We keep our word, own our decisions, and act with honesty - even when it's inconvenient. You'll always know what's happening, why it's happening, and how it helps your brand grow.",
+    body: [
+      "We keep our word, own our decisions, and act with honesty, even when it's inconvenient.",
+      "You'll always know what's happening, why it's happening, and how it helps your brand grow.",
+    ],
     icon: <ShieldCheck className="h-6 w-6" />,
     iconWrap: 'bg-brand-teal/10 border-brand-teal/25 text-brand-teal',
   },
   {
     title: 'Customer First',
-    body:
-      "Your goals aren't \"projects\" to us - they're commitments. We design, build, and deliver like your business is our business.",
+    body: [
+      "Your goals aren't “projects” to us. They're commitments.",
+      "We design, build, and deliver like your business is our business.",
+    ],
     icon: <Heart className="h-6 w-6" />,
     iconWrap: 'bg-brand-magenta/10 border-brand-magenta/25 text-brand-magenta',
   },
   {
     title: 'Innovation',
-    body:
-      "We don't copy trends or recycle old ideas. We combine creativity + strategy to bring you solutions that feel fresh, bold, and tailor-made.",
+    body: [
+      "We don't copy trends or recycle old ideas.",
+      "We combine creativity + strategy to bring you solutions that feel fresh, bold, and tailor-made.",
+    ],
     icon: <Sparkles className="h-6 w-6" />,
     iconWrap: 'bg-brand-purple/10 border-brand-purple/25 text-brand-purple',
   },
   {
     title: 'Sustainability',
-    body:
-      "Future-proof thinking. Ethical execution. Work that stays valuable long after it's delivered. Good for your brand. Good for your customers. Good for what comes next.",
+    body: [
+      "Future-proof thinking. Ethical execution. Work that stays valuable long after it's delivered.",
+      "Good for your brand. Good for your customers. Good for what comes next.",
+    ],
     icon: <Leaf className="h-6 w-6" />,
     iconWrap: 'bg-brand-teal/10 border-brand-teal/25 text-brand-teal',
   },
@@ -77,35 +86,51 @@ export const About: React.FC = () => {
 
         <div className="flex-1 flex items-center justify-center pt-32 pb-20 md:pt-44 md:pb-28 relative z-10">
           <div className="container mx-auto px-4 md:px-6 text-center max-w-5xl">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="font-mono text-xs md:text-sm font-bold tracking-[0.4em] uppercase text-brand-teal mb-6 md:mb-8 block"
+            >
+              About Us
+            </motion.span>
+
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-              className="font-chunky font-black text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] leading-[1.05] mb-6 md:mb-8 text-white tracking-tight"
+              className="font-chunky font-black text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] mb-6 md:mb-8 text-white tracking-tight max-w-5xl mx-auto text-balance"
             >
-              Branding that{' '}
+              Your business deserves branding that doesn't confuse customers, but{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-magenta animate-gradient-slow">
-                convinces, not confuses.
+                convinces them and drives real results
               </span>
             </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="font-chunky font-bold text-xl sm:text-2xl md:text-3xl text-zinc-200 mb-12 md:mb-16"
+            >
+              We make that happen
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-zinc-300 font-sans text-base sm:text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed mb-6"
+              className="text-zinc-300 font-sans text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-6"
             >
-              Your business deserves branding that doesn't confuse customers, but convinces them and drives real results - we make that happen.
+              We believe great brands are created through vision, voice, and visuals. Most businesses struggle not because their products are weak, but because people can't instantly understand who they are or why they matter.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="text-zinc-400 font-sans text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-10"
+              className="text-zinc-400 font-sans text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10"
             >
-              We believe great brands are created through vision, voice, and visuals. Most businesses struggle not because their products are weak, but because people can't instantly understand who they are or why they matter.
-              <br /><br />
               At Advertising Villa, we fix that by sharpening every place your customer sees you, so their first impression becomes the right impression.
             </motion.p>
           </div>
@@ -117,9 +142,12 @@ export const About: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <Reveal width="100%" variant="up">
             <div className="text-center mb-12 md:mb-16">
+              <span className="font-mono text-xs md:text-sm font-bold tracking-[0.4em] uppercase text-brand-teal mb-4 md:mb-6 block">
+                Our Mission
+              </span>
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-chunky font-black text-white leading-[1.05] tracking-tight mb-4 md:mb-6 text-balance">
-                What drives us{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-magenta">every single time.</span>
+                What drives us and what you can expect{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-magenta">every single time</span>
               </h2>
             </div>
           </Reveal>
@@ -147,12 +175,15 @@ export const About: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
           <Reveal width="100%" variant="up">
             <div className="text-center mb-12 md:mb-16">
+              <span className="font-mono text-xs md:text-sm font-bold tracking-[0.4em] uppercase text-brand-purple mb-4 md:mb-6 block">
+                Our Vision
+              </span>
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-chunky font-black text-white leading-[1.05] tracking-tight mb-4 md:mb-6 text-balance">
                 The next level of{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-magenta">brand excellence.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-magenta">brand excellence</span>
               </h2>
-              <p className="text-zinc-400 font-sans text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                That's the journey we're on.
+              <p className="mt-5 md:mt-6 text-zinc-400 font-sans text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                That's the journey we're on
               </p>
             </div>
           </Reveal>
@@ -178,13 +209,14 @@ export const About: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <Reveal width="100%" variant="up">
             <div className="text-center mb-12 md:mb-16">
+              <span className="font-mono text-xs md:text-sm font-bold tracking-[0.4em] uppercase text-brand-magenta mb-4 md:mb-6 block">
+                Our Core Values
+              </span>
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-chunky font-black text-white leading-[1.05] tracking-tight mb-4 md:mb-6 text-balance">
                 The beliefs you can{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-magenta to-brand-teal">see, feel, experience.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-magenta to-brand-teal">see, feel, and experience</span>
+                {' '}in every project we deliver
               </h2>
-              <p className="text-zinc-400 font-sans text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                In every project we deliver.
-              </p>
             </div>
           </Reveal>
 
@@ -196,7 +228,11 @@ export const About: React.FC = () => {
                     {cv.icon}
                   </div>
                   <h3 className="font-chunky font-bold text-xl md:text-2xl text-white mb-3 leading-tight">{cv.title}</h3>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed">{cv.body}</p>
+                  <div className="space-y-3">
+                    {cv.body.map((para, j) => (
+                      <p key={j} className="text-zinc-400 text-sm md:text-base leading-relaxed">{para}</p>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -217,13 +253,13 @@ export const About: React.FC = () => {
             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-chunky font-black text-white leading-[1.05] mb-6 md:mb-8 tracking-tight">
               Let us know what{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-magenta">
-                you're looking for.
+                you're looking for
               </span>
             </h2>
             <p className="text-zinc-400 font-sans text-base md:text-lg mb-10 leading-relaxed">
-              We'll help you reach it.
+              We'll help you reach it
             </p>
-            <a href="#contact">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               <GlassButton size="lg">Book a Free Consultation</GlassButton>
             </a>
           </Reveal>

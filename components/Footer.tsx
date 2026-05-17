@@ -40,9 +40,6 @@ export const Footer: React.FC = () => {
             <div className="w-fit mb-4 select-none">
               <Logo className="h-12 md:h-16 w-auto" textClassName="text-5xl md:text-6xl" />
             </div>
-            <div className="flex flex-col mb-4">
-              <span className="text-[11px] md:text-[12px] font-bold tracking-[0.2em] text-zinc-300 font-accent">THE ADVERTISING VILLA</span>
-            </div>
             <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-accent max-w-sm">
               A Digital Marketing Agency that removes confusion and drives action through clarity.
             </p>

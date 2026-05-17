@@ -7,6 +7,9 @@ import { FAQAccordion, type FAQItem } from '../ui/faq-accordion';
 import { HorizontalSlider } from '../ui/horizontal-slider';
 import CardFlip from '../ui/flip-card';
 import { Check } from 'lucide-react';
+import { CALENDLY_URL } from '../../constants';
+import { CelestialSphere } from '../ui/celestial-sphere';
+import { DitheringShader } from '../ui/dithering-shader';
 
 export interface SubService {
   title: string;
@@ -84,27 +87,42 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
   const gVia = hero.gradientVia ?? 'via-brand-purple';
   const gTo = hero.gradientTo ?? 'to-brand-magenta';
 
+  // Map the service's primary brand color to a hue (degrees) for CelestialSphere
+  const BRAND_HUES: Record<string, number> = {
+    'from-brand-teal': 196,
+    'from-brand-purple': 275,
+    'from-brand-magenta': 328,
+    'from-brand-orange': 16,
+    'from-brand-yellow': 40,
+  };
+  const heroHue = BRAND_HUES[gFrom] ?? 275;
+
+  // Hex used for the DitheringShader (CTA section). Mirrors the brand color of gFrom.
+  const BRAND_HEX: Record<string, string> = {
+    'from-brand-teal': '#00AEEF',
+    'from-brand-purple': '#662D91',
+    'from-brand-magenta': '#ED1E79',
+    'from-brand-orange': '#F15A24',
+    'from-brand-yellow': '#FBB03B',
+  };
+  const ctaShaderColor = BRAND_HEX[gFrom] ?? '#662D91';
+
   return (
     <>
       {/* ============ HERO ============ */}
       <section className="dark relative min-h-[100svh] flex flex-col overflow-hidden bg-zinc-950">
-        {/* Background video - visible with readable text overlay */}
+        {/* Animated cosmic background (replaces per-service stock video) */}
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster={hero.posterUrl}
-            className="absolute inset-0 w-full h-full object-cover opacity-80"
-            aria-hidden
-          >
-            <source src={hero.videoUrl} type="video/mp4" />
-          </video>
-          {/* Vignette: dark only at top (under nav) and bottom (for marquee transition); preserve middle for video clarity. */}
+          <CelestialSphere
+            hue={heroHue}
+            speed={0.35}
+            zoom={1.3}
+            particleSize={3.5}
+            className="absolute inset-0 w-full h-full"
+          />
+          {/* Vignette: dark only at top (under nav) and bottom (for marquee transition); preserve middle for shader clarity. */}
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/25 to-zinc-950" />
-          {/* Subtle radial darkening behind text for legibility without crushing the video */}
+          {/* Subtle radial darkening behind text for legibility */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.15)_45%,transparent_75%)]" />
           <div className="absolute inset-0 opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
         </div>
@@ -147,7 +165,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <a href="#contact">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                 <GlassButton size="lg">Book Free Consultation</GlassButton>
               </a>
               <a href={`#${data.slug}-services`}>
@@ -254,6 +272,23 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
         id="contact"
         className="dark relative overflow-hidden bg-black rounded-t-[2.5rem] md:rounded-t-[5rem] -mt-10 md:-mt-20 z-10 py-20 md:py-32 shadow-[0_-50px_100px_rgba(0,0,0,0.5)]"
       >
+        {/* Animated dithered wave background */}
+        <div className="absolute inset-0 z-0 opacity-30 mix-blend-screen pointer-events-none">
+          <DitheringShader
+            shape="wave"
+            type="8x8"
+            colorBack="#000000"
+            colorFront={ctaShaderColor}
+            pxSize={4}
+            speed={0.5}
+            width={1920}
+            height={1080}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
+        {/* Radial vignette so the shader is felt but text stays crisp */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.6)_70%,#000_100%)] pointer-events-none z-0" />
+
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(80vw,600px)] h-[min(80vw,600px)] bg-brand-teal/10 rounded-full blur-[120px]" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-magenta/10 rounded-full blur-[80px]" />
@@ -279,7 +314,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ data }) => {
             </p>
 
             <div id="cta-btn" className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#contact">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                 <GlassButton size="lg">{cta.buttonText}</GlassButton>
               </a>
             </div>

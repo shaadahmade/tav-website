@@ -3,6 +3,7 @@ import { Logo } from './Logo';
 import { Reveal } from './ui/Reveal';
 import ShaderBackground from './ui/shader-background';
 import { GlassButton } from './ui/glass-button';
+import { CALENDLY_URL } from '../constants';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -91,32 +92,67 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* --- MAIN CONTENT --- */}
-      <div className="flex-1 flex flex-col items-center justify-center relative pt-24 pb-24 md:pt-28 md:pb-28">
+      {/* Extra pb so the CTA buttons clear the next section (Services) which overlaps with -mt-32 */}
+      <div className="flex-1 flex flex-col items-center justify-center relative pt-24 pb-40 md:pt-28 md:pb-56">
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
 
-          {/* Mascot with 3D Interaction */}
-          <div
-            ref={mascotRef}
-            className="mb-8 md:mb-12 relative inline-block group will-change-transform"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange via-brand-purple to-brand-teal rounded-full blur-[30px] md:blur-[40px] opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
-            <div className="relative z-10 bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)] rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 flex flex-col items-center justify-center mx-auto animate-float transition-all duration-300 px-4 md:px-6 overflow-hidden">
-              <Logo className="w-full h-auto max-w-[85%] relative z-20 drop-shadow-[0_10px_30px_rgba(0,0,0,0.3)]" textClassName="text-4xl md:text-7xl" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-white to-slate-100/50 pointer-events-none opacity-50"></div>
+          {/* Mascot — minimal white-frosted glass disc, static */}
+          <div className="mb-10 md:mb-14 relative inline-block">
+            <div className="relative rounded-full w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 mx-auto">
+              {/* White-tinted frosted glass */}
+              <div className="absolute inset-0 rounded-full bg-white/60 backdrop-blur-2xl border border-white/70" />
+
+              {/* Single soft top highlight */}
+              <div className="absolute inset-0 rounded-full bg-[radial-gradient(ellipse_at_50%_10%,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0.2)_45%,transparent_75%)] pointer-events-none" />
+
+              {/* Logo */}
+              <div className="absolute inset-0 flex items-center justify-center p-4 md:p-5">
+                <Logo
+                  className="w-full h-auto max-w-[88%] relative z-10"
+                  textClassName="text-4xl md:text-7xl"
+                />
+              </div>
             </div>
           </div>
 
           {/* TEXT CONTAINER */}
-          <div className="relative max-w-5xl mx-auto mb-10 md:mb-16">
+          <div className="relative max-w-6xl mx-auto mb-12 md:mb-20">
             <div className="relative z-10 w-full flex flex-col items-center px-2">
-              <h1 className="font-chunky font-extrabold text-[2.2rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[7.5rem] mb-6 md:mb-8 text-white tracking-tight md:tracking-tighter drop-shadow-2xl reveal-text">
-                A Digital Agency <br className="hidden sm:block" />
-                Designed For <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-orange animate-pulse-slow">Clarity</span>
+              <h1 className="font-chunky font-extrabold tracking-tight md:tracking-tighter text-white drop-shadow-2xl reveal-text">
+                <span
+                  className="block text-balance leading-[1.02] text-[2rem] sm:text-5xl md:text-6xl lg:text-[6.25rem] mb-3 md:mb-5"
+                  style={{ textWrap: 'balance' as any }}
+                >
+                  A Digital Marketing Agency Designed for
+                </span>
+                <span
+                  className="block leading-[1.05] pb-2 md:pb-4 text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-purple to-brand-orange animate-pulse-slow text-[1.75rem] sm:text-4xl md:text-6xl lg:text-[6.25rem] whitespace-normal sm:whitespace-nowrap"
+                >
+                  Clarity, Trust, and Results
+                </span>
               </h1>
 
-              <div className="max-w-2xl mx-auto reveal-text px-2" style={{ animationDelay: '0.2s' }}>
-                <p className="font-sans text-base sm:text-lg md:text-xl text-zinc-400 leading-relaxed font-medium">
-                  We build fast, high-converting websites, run profitable ads, and execute SEO strategies that actually make sense.
+              {/* Decorative divider */}
+              <div
+                className="reveal-text mt-8 md:mt-12 mb-8 md:mb-10 h-px w-24 md:w-32 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                style={{ animationDelay: '0.15s' }}
+              />
+
+              <div
+                className="max-w-3xl mx-auto reveal-text px-2 space-y-5 md:space-y-7 text-center"
+                style={{ animationDelay: '0.25s' }}
+              >
+                <p
+                  className="font-sans text-base sm:text-lg md:text-xl text-zinc-400 leading-[1.7] md:leading-[1.75] font-medium text-balance"
+                  style={{ textWrap: 'pretty' as any }}
+                >
+                  We remove confusion from your website, SEO, ads, and content so customers know exactly why they should choose you.
+                </p>
+                <p
+                  className="font-sans text-base sm:text-lg md:text-xl text-zinc-200 leading-[1.7] md:leading-[1.75] font-semibold italic text-balance"
+                  style={{ textWrap: 'pretty' as any }}
+                >
+                  Because when people understand your brand in seconds, choosing you feels obvious.
                 </p>
               </div>
             </div>
@@ -124,7 +160,7 @@ export const Hero: React.FC = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 px-4 w-full max-w-lg mx-auto reveal-text" style={{ animationDelay: '0.4s' }}>
-            <a href="#contact" className="inline-block">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
               <GlassButton size="lg">
                 Get Free Consultation
               </GlassButton>

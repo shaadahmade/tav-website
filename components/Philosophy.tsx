@@ -36,26 +36,39 @@ export const Philosophy: React.FC = () => {
 
          {/* SECTION 1: THE APPROACH (Minimalist Stacking with Hero Scroll) */}
          <div className="bg-white rounded-t-[2.5rem] md:rounded-t-[5rem] shadow-[0_-50px_100px_rgba(0,0,0,0.02)] pb-32 md:pb-48 overflow-hidden relative z-10">
-            <div className="pt-40 md:pt-56 relative">
 
-               <div className="container mx-auto px-4 md:px-6 relative z-10">
-
-                  {/* Header */}
-                  <div className="max-w-5xl mx-auto text-center mb-16 md:mb-48">
+            {/* DARK HEADER BAND — only the heading area is dark */}
+            <div className="dark bg-zinc-950 text-white pt-40 md:pt-56 pb-20 md:pb-32 rounded-b-[2.5rem] md:rounded-b-[5rem]">
+               <div className="container mx-auto px-4 md:px-6">
+                  <div className="max-w-5xl mx-auto text-center">
                      <Reveal width="100%" variant="blur" duration={1.2}>
-                        <span className="font-mono text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase text-slate-300 mb-8 block">THE APPROACH</span>
+                        {/* Main section heading (biggest) */}
+                        <h2 className="font-chunky font-black text-white leading-[0.95] tracking-tighter mb-10 md:mb-16 text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] xl:text-[8.5rem]">
+                           Why Businesses Choose
+                           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-magenta to-brand-orange">
+                              Advertising Villa
+                           </span>
+                        </h2>
 
-                        <h3 className="text-3xl sm:text-5xl md:text-[6.5rem] lg:text-[7rem] font-chunky font-black text-brand-black leading-[1.05] tracking-tight mb-8 md:mb-12 uppercase">
-                           We don't start <br className="hidden sm:block" /> with <br className="hidden sm:block" />
-                           <span className="text-slate-200">execution.</span>
+                        {/* Sub-headline — clearly smaller than H2, fits on a single line per row */}
+                        <h3 className="font-chunky font-black text-white leading-[1.02] tracking-tight mb-6 md:mb-8 text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                           <span className="block whitespace-nowrap">We don't start with <span className="text-zinc-700">tools.</span></span>
                         </h3>
 
-                        <p className="text-lg md:text-2xl text-slate-400 font-medium font-sans leading-relaxed max-w-4xl mx-auto px-4">
-                           Most agencies rush to build. <span className="text-brand-black font-extrabold">We rush to understand.</span> <br className="hidden md:block" />
-                           Because a beautiful website that confuses people is just a digital paperweight.
+                        <p className="font-sans font-medium leading-snug text-zinc-400 mx-auto px-4 text-base sm:text-xl md:text-2xl lg:text-3xl max-w-3xl">
+                           We start with <span className="text-white font-extrabold">clarity.</span>
                         </p>
                      </Reveal>
                   </div>
+               </div>
+            </div>
+
+            <div className="pt-20 md:pt-32 relative">
+
+               <div className="container mx-auto px-4 md:px-6 relative z-10">
+
+                  {/* Spacer where the old header used to sit */}
+                  <div className="mb-16 md:mb-48"></div>
 
                   {/* What You Won't Get - Container Scroll Animation */}
                   <div className="max-w-7xl mx-auto">

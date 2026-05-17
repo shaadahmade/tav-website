@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Reveal } from './ui/Reveal';
 import { GlassButton } from './ui/glass-button';
+import { CALENDLY_URL } from '../constants';
 
 export const CTA: React.FC = () => {
   const [offset, setOffset] = useState(0);
@@ -61,7 +62,7 @@ export const CTA: React.FC = () => {
             </p>
 
             <div id="cta-btn" className="flex flex-col items-center justify-center gap-4 md:gap-6">
-                 <a href="#contact" className="inline-block">
+                 <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
                     <GlassButton size="lg">
                        Book Your Consultation Today
                     </GlassButton>

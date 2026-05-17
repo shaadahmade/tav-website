@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Monitor, Settings, Code, Sparkles, Layout } from "lucide-react";
 import { Button } from "./button";
+import { CALENDLY_URL } from "../../constants";
 
 export type TimeLine_01Entry = {
   icon: React.ComponentType<{ className?: string }>;
@@ -79,7 +80,7 @@ export const defaultEntries: TimeLine_01Entry[] = [
     ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
     button: {
-      url: "#contact",
+      url: CALENDLY_URL,
       text: "Start Your Project",
     },
   },
@@ -250,8 +251,12 @@ export default function TimeLine_01({
                                 className="group bg-brand-teal hover:bg-brand-teal/90 text-white font-chunky font-bold rounded-full transition-all duration-300 px-8" 
                                 asChild
                               >
-                                <a href={entry.button.url}>
-                                  {entry.button.text} 
+                                <a
+                                  href={entry.button.url}
+                                  target={entry.button.url.startsWith('http') ? '_blank' : undefined}
+                                  rel={entry.button.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                >
+                                  {entry.button.text}
                                   <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                 </a>
                               </Button>

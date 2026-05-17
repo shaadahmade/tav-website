@@ -1,15 +1,15 @@
 import React, { useState, useEffect, memo, useRef } from 'react';
-import { Menu, X, Home, User, Briefcase, MessageSquare, ChevronDown } from 'lucide-react';
+import { Menu, X, Home, User, MessageSquare, ChevronDown } from 'lucide-react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { NavItem } from '../types';
 import { Logo } from './Logo';
 import { GlassButton } from './ui/glass-button';
 import { NavBar as TubelightNavBar } from './ui/tubelight-navbar';
+import { CALENDLY_URL } from '../constants';
 
 const navItems = [
   { name: 'Home', url: '/', icon: Home },
   { name: 'About', url: '/about', icon: User },
-  { name: 'Philosophy', url: '/#philosophy', icon: Briefcase },
   { name: 'Contact', url: '/#cta-btn', icon: MessageSquare },
 ];
 
@@ -66,7 +66,6 @@ export const Navbar: React.FC = () => {
     
     if (path === '/') {
         if (!hash || hash === '#') setActiveTab('Home');
-        else if (hash.includes('philosophy')) setActiveTab('Philosophy');
         else if (hash.includes('cta-btn') || hash.includes('contact')) setActiveTab('Contact');
     } else if (path === '/about') {
         setActiveTab('About');
@@ -188,7 +187,7 @@ export const Navbar: React.FC = () => {
 
         {/* CTA BUTTON */}
         <div className="hidden md:flex items-center gap-4 relative z-50">
-           <a href="#cta-btn">
+           <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               <GlassButton size="sm">
                  Let's Talk
               </GlassButton>
@@ -259,7 +258,7 @@ export const Navbar: React.FC = () => {
                </div>
 
                <div className="pt-4 flex justify-center w-full">
-                 <a href="#contact" onClick={() => setIsOpen(false)} className="inline-block">
+                 <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="inline-block">
                    <GlassButton>
                      Book Consultation
                    </GlassButton>

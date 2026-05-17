@@ -4,6 +4,7 @@ import * as React from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
+import { CALENDLY_URL } from "../../constants";
 
 export interface NewsArticle {
   href: string;
@@ -212,7 +213,7 @@ function NewsCard({
       isMobile &&
       (!drag.current.startTime || Date.now() - drag.current.startTime < 250)
     ) {
-      window.location.href = href || "#contact";
+      window.open(href || CALENDLY_URL, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -271,7 +272,9 @@ function NewsCard({
         >
           <div className="flex items-center justify-between pt-4 text-xs">
             <a
-              href={href || "#contact"}
+              href={href || CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-bold text-brand-teal hover:text-white transition-colors duration-150"
               onClick={(e) => e.stopPropagation()}
             >

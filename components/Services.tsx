@@ -1,69 +1,130 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
 import { Marquee } from './ui/Marquee';
 
-const services = [
+interface Service {
+  title: string;
+  description: string;
+  intro: string;
+  bullets: string[];
+  cta: string;
+  image: string;
+  link: string;
+}
+
+const services: Service[] = [
   {
-    title: "Website Design",
+    title: "Website Design Services",
     description: "Your customer shouldn't have to read your website carefully to know what to do next.",
-    details: "What you do • Who it's for • What to do next",
+    intro: "We design websites where people don't scroll to figure things out.\nThey instantly know:",
+    bullets: ["What you do.", "Who it's for.", "What to do next."],
+    cta: "Explore Our Website Design Approach",
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop",
     link: "/services/web-design"
   },
   {
-    title: "Website Dev",
+    title: "Website Development Services",
     description: "A website that works the way customers assume it should.",
-    details: "Loads fast • Stays stable • Frustration-free experience",
+    intro: "We build websites that:",
+    bullets: [
+      "Loads fast on every device.",
+      "Stays stable as traffic grows.",
+      "Delivers a smooth, frustration-free experience."
+    ],
+    cta: "Explore Our Website Development Approach",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
     link: "/services/web-development"
   },
   {
-    title: "App Dev",
-    description: "Good apps don't need instructions. They explain themselves.",
-    details: "Familiar from first tap • Clear next action • Works smoothly",
+    title: "App Development Services",
+    description: "Good apps don't need instructions.\nThey explain themselves.",
+    intro: "We design and develop apps that:",
+    bullets: [
+      "Feel familiar from the first tap.",
+      "Make it clear what to do next.",
+      "Work smoothly without frustration."
+    ],
+    cta: "Explore our App Development Approach",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
     link: "/services/app-development"
   },
   {
-    title: "SEO",
-    description: "We don't chase traffic. We bring high-intent customers already searching for your business.",
-    details: "High-intent keywords • Real questions answered • Visibility that grows month after month",
+    title: "SEO Services",
+    description: "We don't chase traffic.\nWe bring high-intent customers already searching for your business.",
+    intro: "Our SEO focuses on:",
+    bullets: [
+      "Targeting high-intent keywords.",
+      "Create pages that answer real questions.",
+      "Visibility that grows month after month."
+    ],
+    cta: "Explore Our SEO Approach",
     image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2070&auto=format&fit=crop",
     link: "/services/seo"
   },
   {
-    title: "Marketing Automation",
-    description: "Good marketing automation doesn't replace human interaction. It makes sure customers hear from you at the right time.",
-    details: "Follow up instantly • Send relevant messages • Guide leads step by step",
+    title: "Marketing Automation Services",
+    description: "Good marketing automation doesn't replace human interaction.\nIt makes sure customers hear from you at the right time.",
+    intro: "We build automation systems that:",
+    bullets: [
+      "Follow up instantly.",
+      "Send relevant messages.",
+      "Guide customer journeys step by step."
+    ],
+    cta: "Explore Our Marketing Automation Approach",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     link: "/services/marketing-automation"
   },
   {
-    title: "Performance Marketing",
-    description: "Good performance marketing isn't about spending more. It's about making every click count.",
-    details: "Reach people ready to act • Make the offer clear • Turn ad spend into real results",
+    title: "Performance Marketing Services",
+    description: "Good performance marketing isn't about spending more.\nIt's about making every click count.",
+    intro: "We run campaigns that:",
+    bullets: [
+      "Reach people who are ready to act.",
+      "Make the offer clear before they click.",
+      "Turn ad spend into real results."
+    ],
+    cta: "Explore Our Performance Marketing Approach",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     link: "/services/performance-marketing"
   },
   {
-    title: "Social Media",
+    title: "Social Media Marketing",
     description: "Social media marketing should help customers recognize your brand before they read a word.",
-    details: "One clear message per post • Consistent recognizable visuals • Content that keeps readers hooked",
+    intro: "We create:",
+    bullets: [
+      "One clear message per post.",
+      "Consistent, recognizable visuals.",
+      "Content that keeps readers hooked till the last line."
+    ],
+    cta: "Explore Our Social Media Marketing Approach",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
     link: "/services/social-media"
   },
   {
-    title: "Graphic Design",
-    description: "If people have to think where to click, your design has already failed.",
-    details: "Understand your message faster • Remember your brand longer • Trust you sooner",
+    title: "Graphic Designing Services",
+    description: "If people have to think where to click,\nyour design has already failed.",
+    intro: "We design visuals that help customers:",
+    bullets: [
+      "Understand your message faster.",
+      "Remember your brand longer.",
+      "Trust you sooner."
+    ],
+    cta: "Explore Our Graphic Design Approach",
     image: "https://images.unsplash.com/photo-1626785774573-4b799314346d?q=80&w=2070&auto=format&fit=crop",
     link: "/services/graphic-design"
   },
   {
-    title: "Content Marketing",
-    description: "Good content marketing doesn't try to impress. It answers the exact questions stopping your customer from buying.",
-    details: "Answers real questions • Simplifies decisions • Builds trust before the sale",
+    title: "Content Marketing Services",
+    description: "Good content marketing doesn't try to impress.\nIt answers the exact questions stopping your customer from buying.",
+    intro: "We create content that:",
+    bullets: [
+      "Answers real questions",
+      "Simplifies decisions",
+      "Builds trust before the sale"
+    ],
+    cta: "Explore Our Content Marketing Approach",
     image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2073&auto=format&fit=crop",
     link: "/services/content-marketing"
   }
@@ -136,16 +197,34 @@ export const Services: React.FC = () => {
                         <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-24 opacity-100 md:opacity-50 md:group-hover:opacity-100 md:group-hover:translate-x-4 transition-all duration-500">
 
                             {/* Number & Title */}
-                            <div className="flex items-start gap-6 md:gap-16 md:w-[45%] md:min-h-[200px]">
-                                <h3 className={`text-2xl sm:text-4xl md:text-6xl font-chunky font-black transition-colors duration-300 leading-[1.2] ${activeIndex === index ? 'text-white' : 'text-zinc-300 md:text-zinc-500 md:group-hover:text-white'}`}>
+                            <div className="flex items-start gap-6 md:gap-16 md:w-[42%] md:min-h-[260px]">
+                                <h3 className={`text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-chunky font-black transition-colors duration-300 leading-[1.1] ${activeIndex === index ? 'text-white' : 'text-zinc-300 md:text-zinc-500 md:group-hover:text-white'}`}>
                                     {service.title}
                                 </h3>
                             </div>
 
-                            {/* Description */}
-                            <div className="md:w-[50%] md:min-h-[200px] flex flex-col justify-start gap-4 md:gap-6">
-                                <p className="text-sm md:text-2xl text-zinc-300 font-medium leading-[1.6]">{service.description}</p>
-                                <p className="text-[10px] md:text-base text-brand-teal uppercase tracking-[0.15em] md:tracking-[0.2em] font-mono leading-relaxed">{service.details}</p>
+                            {/* Description, Bullets, CTA */}
+                            <div className="md:w-[55%] md:min-h-[260px] flex flex-col justify-start gap-4 md:gap-6">
+                                <p className="text-base md:text-2xl text-white font-semibold leading-[1.4] whitespace-pre-line">
+                                  {service.description}
+                                </p>
+                                <p className="text-sm md:text-base text-zinc-400 leading-[1.6] font-medium whitespace-pre-line">
+                                  {service.intro}
+                                </p>
+                                <ul className="space-y-2 md:space-y-2.5 text-sm md:text-base text-zinc-300 leading-relaxed">
+                                  {service.bullets.map((b, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                      <span className="mt-2 md:mt-2.5 h-1.5 w-1.5 rounded-full bg-brand-teal flex-shrink-0" />
+                                      <span>{b}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                                <div className="mt-2 md:mt-3">
+                                  <span className="inline-flex items-center gap-2 text-xs md:text-sm font-mono font-bold uppercase tracking-[0.2em] text-brand-teal group-hover:text-white transition-colors duration-300">
+                                    {service.cta}
+                                    <ArrowUpRight className="h-3.5 w-3.5 md:h-4 md:w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
+                                  </span>
+                                </div>
                             </div>
                         </div>
                     </Reveal>

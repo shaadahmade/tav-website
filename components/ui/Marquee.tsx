@@ -25,7 +25,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
           <span 
             key={i} 
             className={`mx-2 md:mx-4 text-3xl sm:text-5xl md:text-[8rem] font-chunky font-black uppercase ${transparent ? 'text-transparent stroke-text' : 'text-brand-black/5 dark:text-white/5'}`}
-            style={transparent ? { WebkitTextStroke: '1px rgba(100,100,100,0.15)' } : {}}
+            style={transparent ? { WebkitTextStroke: '1px rgba(200,200,200,0.45)' } : {}}
           >
             {text}
           </span>
@@ -39,16 +39,16 @@ export const Marquee: React.FC<MarqueeProps> = ({
           <span 
             key={i} 
             className={`mx-2 md:mx-4 text-3xl sm:text-5xl md:text-[8rem] font-chunky font-black uppercase ${transparent ? 'text-transparent stroke-text' : 'text-brand-black/5 dark:text-white/5'}`}
-            style={transparent ? { WebkitTextStroke: '1px rgba(100,100,100,0.15)' } : {}}
+            style={transparent ? { WebkitTextStroke: '1px rgba(200,200,200,0.45)' } : {}}
           >
             {text}
           </span>
         ))}
       </div>
       <style>{`
-        .stroke-text { -webkit-text-stroke: 1px rgba(150,150,150,0.15); }
+        .stroke-text { -webkit-text-stroke: 1px rgba(200,200,200,0.45); }
         @media (max-width: 768px) {
-           .stroke-text { -webkit-text-stroke: 0.5px rgba(150,150,150,0.25); } 
+           .stroke-text { -webkit-text-stroke: 0.5px rgba(200,200,200,0.55); }
         }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
         @keyframes scroll-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(0); } }

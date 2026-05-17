@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
+import { PageLoader } from './components/ui/PageLoader';
 
 // Lazy load below-the-fold components to reduce initial bundle size
 const Problem = lazy(() => import('./components/Problem').then(module => ({ default: module.Problem })));
@@ -59,52 +60,52 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services/seo" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <SEOService />
             </Suspense>
           } />
           <Route path="/services/web-design" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <WebDesignService />
             </Suspense>
           } />
           <Route path="/services/marketing-automation" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <MarketingAutomationService />
             </Suspense>
           } />
           <Route path="/services/social-media" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <SocialMediaService />
             </Suspense>
           } />
           <Route path="/services/performance-marketing" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <PerformanceMarketingService />
             </Suspense>
           } />
           <Route path="/services/content-marketing" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <ContentMarketingService />
             </Suspense>
           } />
           <Route path="/services/web-development" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <WebDevelopmentService />
             </Suspense>
           } />
           <Route path="/services/app-development" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <AppDevelopmentService />
             </Suspense>
           } />
           <Route path="/services/graphic-design" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <GraphicDesignService />
             </Suspense>
           } />
           <Route path="/about" element={
-            <Suspense fallback={<SectionLoader />}>
+            <Suspense fallback={<PageLoader />}>
               <About />
             </Suspense>
           } />
