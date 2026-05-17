@@ -167,13 +167,15 @@ export default function CardFlip({
             )}
 
             <div className="mt-auto pt-5 sm:pt-6 border-t border-zinc-800">
-               <button
-                  type="button"
+               <a
+                  href="https://calendly.com/admin-theadvertisingvilla/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{ backgroundColor: 'var(--primary)' }}
-                  className="group/btn w-full py-2.5 sm:py-3 rounded-xl text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-black/40 transition-all duration-300 hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:brightness-95"
+                  className="group/btn block w-full py-2.5 sm:py-3 rounded-xl text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-black/40 transition-all duration-300 hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:brightness-95 text-center"
                >
                   Book This Service
-               </button>
+               </a>
             </div>
           </div>
         </div>
